@@ -1162,6 +1162,263 @@
             gap: 20px;
         }
 
+        /* ==========================================================================
+           БЛОК 7: FAQ
+           ========================================================================== */
+        .faq-section {
+            padding: 100px 0 110px;
+            background: transparent;
+            color: #191E28;
+        }
+
+        .faq-section .section-badge {
+            color: var(--accent);
+        }
+
+        .faq-section .section-title {
+            color: #141821;
+        }
+
+        .faq-section .section-lead {
+            color: #475467;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+
+        .faq-item {
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            transition: box-shadow 0.6s ease, border-color 0.5s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08), 0 0 20px rgba(224,115,64,0.1);
+            border-color: rgba(224,115,64,0.3);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 28px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question-text {
+            color: #161B24;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            font-family: inherit;
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(224,115,64,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .faq-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: #E07340;
+            transition: stroke 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .faq-item.open .faq-icon svg {
+            stroke: #fff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 600px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 36px 30px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .faq-answer-lead {
+            color: #2D3748;
+            font-size: 16px;
+            line-height: 1.75;
+            margin: 20px 0 16px;
+        }
+
+        .faq-detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #4B5565;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .faq-detail-list li::before {
+            content: '';
+            flex-shrink: 0;
+            margin-top: 7px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .faq-answer-note {
+            background: rgba(224,115,64,0.06);
+            border-left: 3px solid #E07340;
+            border-radius: 8px;
+            padding: 14px 18px;
+            color: #2D3748;
+            font-size: 14.5px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .faq-consult-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(224,115,64,0.35);
+            border-radius: 20px;
+            padding: 44px 48px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06), 0 0 25px rgba(224,115,64,0.12);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .faq-consult-title {
+            color: #141821;
+            font-size: clamp(20px, 2vw, 26px);
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.35;
+        }
+
+        .faq-consult-text {
+            color: #4B5565;
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .faq-consult-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-consult-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .faq-step-num {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(224,115,64,0.1);
+            border: 1px solid rgba(224,115,64,0.25);
+            color: #C85F2D;
+            font-size: 13px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-step-text {
+            color: #2D3748;
+            font-size: 15px;
+            line-height: 1.65;
+            padding-top: 4px;
+        }
+
+        .faq-step-text strong {
+            color: #161B24;
+        }
+
+        .faq-consult-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-badge-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 20px;
+            background: rgba(248,250,252,0.9);
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 14px;
+        }
+
+        .faq-badge-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .faq-badge-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #C85F2D;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .faq-badge-desc {
+            font-size: 14px;
+            color: #4B5565;
+            line-height: 1.5;
+        }
+
         /* Адаптивность */
         @media (max-width: 960px) {
             .anatomy-section {
@@ -1249,6 +1506,28 @@
 
             .brand-desc, .brand-divider {
                 display: none;
+            }
+
+            .faq-section {
+                padding: 64px 0 76px;
+            }
+
+            .faq-question {
+                padding: 20px 22px;
+            }
+
+            .faq-question-text {
+                font-size: 16px;
+            }
+
+            .faq-answer-inner {
+                padding: 0 22px 24px;
+            }
+
+            .faq-consult-card {
+                grid-template-columns: 1fr;
+                padding: 28px 22px;
+                gap: 28px;
             }
         }
     </style>
@@ -1845,6 +2124,244 @@
                 if (rBox) rBox.style.display = 'none';
                 if (qBox) qBox.style.display = 'block';
                 showQuestion(0);
+            });
+        });
+    </script>
+
+    <!-- БЛОК 7: FAQ — Скрытые страхи и возражения -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+
+            <div class="section-badge reveal-on-scroll">Частые вопросы</div>
+
+            <h2 class="section-title reveal-on-scroll">
+                Вопросы, которые боятся задать вслух
+            </h2>
+
+            <div class="section-lead reveal-on-scroll">
+                <p>
+                    Собрал самые честные вопросы, которые я слышу перед началом работы. Если у вас есть сомнения — скорее всего, ответ уже здесь.
+                </p>
+            </div>
+
+            <div class="faq-list">
+
+                <!-- Q1 -->
+                <div class="faq-item reveal-on-scroll stagger-1">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">Я не потеряю контроль во время сеанса?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p class="faq-answer-lead">
+                                Нет. В изменённом состоянии сознания вы остаётесь собой — слышите меня, осознаёте, что происходит, и можете остановить сеанс в любой момент.
+                            </p>
+                            <ul class="faq-detail-list">
+                                <li>Это не гипноз и не транс. Вы не делаете ничего против своей воли.</li>
+                                <li>Изменённое состояние — это скорее глубокое расслабление, похожее на состояние перед сном, когда разум спокоен, но вы всё воспринимаете.</li>
+                                <li>Я работаю только с тем, на что вы даёте согласие. Мы проговариваем всё заранее.</li>
+                                <li>Большинство женщин описывают ощущение как «наконец выдохнула», а не как что-то пугающее.</li>
+                            </ul>
+                            <div class="faq-answer-note">
+                                Если после первого сеанса что-то вас насторожило — вы можете прекратить работу и получить полный возврат. Это ваш выбор на каждом этапе.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item reveal-on-scroll stagger-2">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">У меня нарушен гормональный фон / проблемы с щитовидкой. Это помеха?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p class="faq-answer-lead">
+                                Нет. Я работаю не с гормонами напрямую, а с тем, что стоит за ними — с психоэмоциональным состоянием, которое влияет на то, как тело реагирует на стресс и удерживает жир.
+                            </p>
+                            <ul class="faq-detail-list">
+                                <li>Гормональные нарушения часто идут рука об руку с хроническим стрессом и подавленными эмоциями. Это не случайность.</li>
+                                <li>Психоэмоциональная коррекция не заменяет медицинское лечение, но отлично работает параллельно с ним.</li>
+                                <li>Среди клиентов были женщины с диагнозами по щитовидной железе — работа шла в том же формате, результат был.</li>
+                                <li>Если у вас есть тяжёлые эндокринные расстройства — мы обсудим это на консультации и я честно скажу, подходит ли формат.</li>
+                            </ul>
+                            <div class="faq-answer-note">
+                                Мой формат — не альтернатива врачу. Это работа с той частью проблемы, которую таблетки не затрагивают.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item reveal-on-scroll stagger-3">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">Мне придётся отказаться от еды или соблюдать диету?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p class="faq-answer-lead">
+                                Нет. Никаких запретов, списков разрешённых продуктов и контроля за каждым граммом.
+                            </p>
+                            <ul class="faq-detail-list">
+                                <li>Суть работы в другом: убрать причину, по которой тело хочет есть больше, чем ему нужно, или удерживает жир, несмотря на ограничения.</li>
+                                <li>Когда подсознательная причина уходит — пищевое поведение меняется само. Не потому что вы «держитесь», а потому что потребность исчезла.</li>
+                                <li>Вечерние срывы, тяга к сладкому в стресс, еда «чтобы успокоиться» — это не слабость характера, это симптомы. С ними и работаем.</li>
+                                <li>Еда возвращается в статус «просто еда», а не источника вины или утешения.</li>
+                            </ul>
+                            <div class="faq-answer-note">
+                                Слово «диета» в нашей работе не используется — это принципиальная позиция.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item reveal-on-scroll stagger-4">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">Как работает гарантия возврата 100%?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p class="faq-answer-lead">
+                                Если после первых двух сеансов вы чувствуете, что этот формат — не ваш путь, я возвращаю полную сумму. Без объяснений, без удержаний.
+                            </p>
+                            <ul class="faq-detail-list">
+                                <li>Гарантия действует в течение 14 дней с момента начала работы.</li>
+                                <li>Не нужно ничего доказывать или объяснять причину. Достаточно написать мне в Telegram.</li>
+                                <li>Возврат проходит тем же способом, которым была произведена оплата.</li>
+                                <li>Эта гарантия существует не для маркетинга — я уверен в том, что делаю, и не хочу удерживать деньги человека, которому это не подошло.</li>
+                            </ul>
+                            <div class="faq-answer-note">
+                                За всё время работы не было ни одного случая, когда человек попросил возврат после первых двух сеансов. Но возможность остаётся — и это честно.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item reveal-on-scroll stagger-1">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">Как проходят онлайн-сеансы? Это безопасно и конфиденциально?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p class="faq-answer-lead">
+                                Да. Сеансы проходят в Zoom, один на один — никаких групп, кураторов или посторонних.
+                            </p>
+                            <ul class="faq-detail-list">
+                                <li>Для сеанса нужны: тихое место, наушники, час времени без отвлечений.</li>
+                                <li>Запись ведётся только с вашего письменного согласия — по умолчанию ничего не записывается.</li>
+                                <li>Всё, что вы говорите, остаётся между нами. Это не обсуждается с третьими лицами.</li>
+                                <li>Онлайн-формат полностью равен по эффективности очному — это подтверждено практикой.</li>
+                            </ul>
+                            <div class="faq-answer-note">
+                                Перед первым сеансом мы созваниваемся на 10 минут — чтобы познакомиться и снять все организационные вопросы.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Карточка с подробностями о консультации -->
+            <div class="faq-consult-card reveal-on-scroll">
+                <div>
+                    <div class="faq-consult-title">Как проходит первичная консультация</div>
+                    <p class="faq-consult-text">
+                        Это не продающий звонок и не «знакомство». Это 10-минутный разбор вашей конкретной ситуации — чтобы вы понимали, есть ли смысл идти дальше.
+                    </p>
+                    <ul class="faq-consult-steps">
+                        <li class="faq-consult-step">
+                            <span class="faq-step-num">1</span>
+                            <span class="faq-step-text"><strong>Вы заполняете анкету</strong> — 5 вопросов, 1 минута. Я читаю её до звонка, чтобы не тратить ваше время на базовые вопросы.</span>
+                        </li>
+                        <li class="faq-consult-step">
+                            <span class="faq-step-num">2</span>
+                            <span class="faq-step-text"><strong>10-минутный звонок в Telegram</strong> — я задаю уточняющие вопросы и объясняю, что именно происходит в вашем случае на уровне подсознания.</span>
+                        </li>
+                        <li class="faq-consult-step">
+                            <span class="faq-step-num">3</span>
+                            <span class="faq-step-text"><strong>Ясность без давления</strong> — после звонка вы понимаете, подходит ли формат, и принимаете решение сами. Никаких «специальных предложений только сейчас».</span>
+                        </li>
+                        <li class="faq-consult-step">
+                            <span class="faq-step-num">4</span>
+                            <span class="faq-step-text"><strong>Если не подходит</strong> — честно скажу об этом и порекомендую другой путь. Я не работаю с теми, кому мой формат объективно не поможет.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="faq-consult-badges">
+                    <div class="faq-badge-row">
+                        <span class="faq-badge-icon">⏱</span>
+                        <div>
+                            <div class="faq-badge-label">Анкета</div>
+                            <div class="faq-badge-desc">1 минута, 5 вопросов. Без лишних деталей.</div>
+                        </div>
+                    </div>
+                    <div class="faq-badge-row">
+                        <span class="faq-badge-icon">📞</span>
+                        <div>
+                            <div class="faq-badge-label">Звонок</div>
+                            <div class="faq-badge-desc">10 минут в Telegram. Разбираем именно ваш случай.</div>
+                        </div>
+                    </div>
+                    <div class="faq-badge-row">
+                        <span class="faq-badge-icon">🔒</span>
+                        <div>
+                            <div class="faq-badge-label">Конфиденциально</div>
+                            <div class="faq-badge-desc">Всё остаётся между нами. Без записей без вашего согласия.</div>
+                        </div>
+                    </div>
+                    <div class="faq-badge-row">
+                        <span class="faq-badge-icon">↩️</span>
+                        <div>
+                            <div class="faq-badge-label">Гарантия возврата</div>
+                            <div class="faq-badge-desc">100% в первые 14 дней. Без объяснений.</div>
+                        </div>
+                    </div>
+                    <div class="faq-badge-row">
+                        <span class="faq-badge-icon">👤</span>
+                        <div>
+                            <div class="faq-badge-label">Формат</div>
+                            <div class="faq-badge-desc">Только Андрей Полиенко. Никаких кураторов и групп.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item.open').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
             });
         });
     </script>
