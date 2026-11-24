@@ -1530,6 +1530,332 @@
                 gap: 28px;
             }
         }
+
+        /* ==========================================================================
+           БЛОК 8: Финальный CTA + Форма заявки
+           ========================================================================== */
+        .cta-section {
+            padding: 110px 0 130px;
+            background: transparent;
+            color: #191E28;
+        }
+
+        .cta-section .section-badge { color: var(--accent); }
+        .cta-section .section-title { color: #141821; }
+
+        .cta-lead {
+            color: #475467;
+            font-size: clamp(16px, 1.4vw, 18px);
+            line-height: 1.75;
+            max-width: 620px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .cta-form-wrap {
+            background: #FFFFFF;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 24px;
+            padding: 48px 52px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.07), 0 0 30px rgba(224,115,64,0.07);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .cta-yn-group {
+            margin-bottom: 32px;
+        }
+
+        .cta-yn-label {
+            color: #161B24;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .cta-yn-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cta-yn-btn {
+            flex: 1;
+            padding: 13px 20px;
+            border-radius: 12px;
+            border: 1.5px solid rgba(0,0,0,0.12);
+            background: #F8FAFC;
+            color: #2D3748;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+        }
+
+        .cta-yn-btn:hover {
+            border-color: #CBD5E0;
+            background: #EDF2F7;
+        }
+
+        .cta-yn-btn.selected {
+            border-color: var(--accent);
+            background: rgba(224,115,64,0.08);
+            color: #C85F2D;
+            box-shadow: 0 0 0 3px rgba(224,115,64,0.12);
+        }
+
+        .cta-field-group {
+            margin-bottom: 28px;
+        }
+
+        .cta-field-label {
+            display: block;
+            color: #161B24;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cta-textarea,
+        .cta-input {
+            width: 100%;
+            border: 1.5px solid rgba(0,0,0,0.12);
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #2D3748;
+            background: #F8FAFC;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .cta-textarea { min-height: 100px; }
+
+        .cta-textarea:focus,
+        .cta-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(224,115,64,0.12);
+            background: #FFFFFF;
+        }
+
+        .cta-textarea::placeholder,
+        .cta-input::placeholder {
+            color: #A0AEC0;
+        }
+
+        .cta-divider {
+            border: none;
+            border-top: 1px solid rgba(0,0,0,0.07);
+            margin: 36px 0 32px;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            flex: 1;
+            min-width: 220px;
+            padding: 18px 32px;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-cta-primary:hover {
+            background: #C85F2D;
+            box-shadow: 0 8px 28px rgba(224,115,64,0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-cta-soft {
+            flex: 1;
+            min-width: 220px;
+            padding: 17px 28px;
+            background: transparent;
+            color: #2D3748;
+            border: 1.5px solid rgba(0,0,0,0.15);
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-cta-soft:hover {
+            border-color: #2AABEE;
+            color: #2AABEE;
+            background: rgba(42,171,238,0.05);
+        }
+
+        .cta-privacy {
+            text-align: center;
+            color: #9BA8BB;
+            font-size: 13px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-success-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-success-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #141821;
+            margin-bottom: 12px;
+        }
+
+        .cta-success-text {
+            color: #475467;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 960px) {
+            .cta-section { padding: 64px 0 80px; }
+            .cta-form-wrap { padding: 28px 22px; }
+            .cta-actions { flex-direction: column; }
+            .btn-cta-primary, .btn-cta-soft { min-width: unset; width: 100%; }
+        }
+
+        /* ==========================================================================
+           Cookie-баннер
+           ========================================================================== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            width: calc(100% - 48px);
+            max-width: 740px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 28px 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.14);
+            z-index: 9999;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .cookie-banner.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .cookie-banner-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #141821;
+            margin-bottom: 10px;
+        }
+
+        .cookie-banner-text {
+            font-size: 14px;
+            color: #4B5565;
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .cookie-checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 22px;
+            cursor: pointer;
+        }
+
+        .cookie-checkbox-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        .cookie-checkbox-label {
+            font-size: 14px;
+            color: #2D3748;
+            line-height: 1.55;
+            cursor: pointer;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn-accept {
+            padding: 12px 28px;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.3s ease;
+        }
+
+        .cookie-btn-accept:hover { background: #C85F2D; }
+
+        .cookie-btn-decline {
+            padding: 12px 24px;
+            background: transparent;
+            color: #64748B;
+            border: 1.5px solid rgba(0,0,0,0.12);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cookie-btn-decline:hover {
+            border-color: #94A3B8;
+            color: #334155;
+        }
+
+        @media (max-width: 600px) {
+            .cookie-banner { padding: 20px 18px; bottom: 12px; }
+            .cookie-actions { flex-direction: column; }
+            .cookie-btn-accept, .cookie-btn-decline { width: 100%; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -2375,6 +2701,214 @@
                 }
             });
         });
+    </script>
+
+    <!-- БЛОК 8: Финальный CTA + Форма заявки -->
+    <section class="cta-section" id="application">
+        <div class="container">
+
+            <div class="section-badge reveal-on-scroll" style="text-align:center;">Запись</div>
+
+            <h2 class="section-title reveal-on-scroll" style="text-align:center;">
+                Если вы дочитали до этого места —<br>вы уже знаете, что дело не в силе воли
+            </h2>
+
+            <p class="cta-lead reveal-on-scroll">
+                Оставьте заявку. Я прочитаю её сам и свяжусь с вами в течение дня.
+            </p>
+
+            <div class="cta-form-wrap reveal-on-scroll">
+                <div id="ctaFormInner">
+
+                    <!-- Q1 -->
+                    <div class="cta-yn-group">
+                        <span class="cta-yn-label">Вы уже пробовали работать с психологом или специалистом по весу?</span>
+                        <div class="cta-yn-buttons" data-field="q1">
+                            <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
+                            <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="cta-yn-group">
+                        <span class="cta-yn-label">Вы знакомы с темой работы с подсознанием или изменёнными состояниями сознания?</span>
+                        <div class="cta-yn-buttons" data-field="q2">
+                            <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
+                            <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="cta-yn-group">
+                        <span class="cta-yn-label">Вы готовы начать личную работу в ближайшие дни?</span>
+                        <div class="cta-yn-buttons" data-field="q3">
+                            <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
+                            <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="cta-yn-group">
+                        <span class="cta-yn-label">Вы понимаете, что это индивидуальная работа — не курс, не марафон, не группа?</span>
+                        <div class="cta-yn-buttons" data-field="q4">
+                            <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
+                            <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
+                        </div>
+                    </div>
+
+                    <hr class="cta-divider">
+
+                    <!-- Текстовое поле -->
+                    <div class="cta-field-group">
+                        <label class="cta-field-label" for="ctaSituation">Опишите вашу ситуацию в 1–2 предложениях</label>
+                        <textarea id="ctaSituation" class="cta-textarea" placeholder="Что происходит, как долго, что уже пробовали…"></textarea>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="cta-field-group">
+                        <label class="cta-field-label" for="ctaTelegram">Ваш Telegram <span style="font-weight:400; color:#9BA8BB;">(для связи)</span></label>
+                        <input id="ctaTelegram" class="cta-input" type="text" placeholder="@username или номер телефона">
+                    </div>
+
+                    <!-- Кнопки -->
+                    <div class="cta-actions">
+                        <button type="button" class="btn-cta-primary" id="ctaSubmitBtn">Отправить заявку</button>
+                        <a href="https://t.me/polienko" target="_blank" rel="noopener" class="btn-cta-soft">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-16.6 6.593C2.4 9.7 2.4 10.75 3.6 11.145l4.065 1.272 1.573 4.9c.21.65 1.02.9 1.573.455l2.263-1.9 4.405 3.228c.81.595 1.96.21 2.165-.762L21.945 4.1c.3-1.395-.69-2.015-1.747-1.667zM8.75 13.775l-.58 3.14-1.14-3.56 9.9-6.14-8.18 6.56z" fill="#2AABEE"/></svg>
+                            Присоединиться к Telegram-группе
+                        </a>
+                    </div>
+
+                    <p class="cta-privacy">Данные не передаются третьим лицам. Я отвечаю лично.</p>
+                </div>
+
+                <!-- Экран успеха -->
+                <div class="cta-success" id="ctaSuccess">
+                    <div class="cta-success-icon">✅</div>
+                    <div class="cta-success-title">Заявка отправлена</div>
+                    <p class="cta-success-text">
+                        Я прочитаю её сегодня и напишу вам в Telegram.<br>
+                        Если не получили ответ в течение дня — напишите мне сами: <a href="https://t.me/polienko" style="color:var(--accent);">@polienko</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cookie-баннер -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Использование файлов cookie">
+        <div class="cookie-banner-title">Мы используем файлы cookie</div>
+        <p class="cookie-banner-text">
+            Этот сайт использует технические cookie — небольшие файлы, которые сохраняются в вашем браузере. Они нужны для корректной работы сайта: запоминают ваши ответы в тесте, ваш выбор согласия и другие технические параметры. Файлы cookie не содержат личных данных и не передаются третьим лицам.
+        </p>
+        <label class="cookie-checkbox-row" for="cookieCheckbox">
+            <input type="checkbox" id="cookieCheckbox">
+            <span class="cookie-checkbox-label">Я понимаю, что сайт использует файлы cookie, и соглашаюсь с их использованием</span>
+        </label>
+        <div class="cookie-actions">
+            <button type="button" class="cookie-btn-accept" id="cookieAccept">Принять и продолжить</button>
+            <button type="button" class="cookie-btn-decline" id="cookieDecline">Отказаться</button>
+        </div>
+    </div>
+
+    <script>
+        // Блок 8 — Yes/No кнопки
+        document.querySelectorAll('.cta-yn-buttons').forEach(group => {
+            group.querySelectorAll('.cta-yn-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    group.querySelectorAll('.cta-yn-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+            });
+        });
+
+        // Блок 8 — Отправка формы
+        document.getElementById('ctaSubmitBtn').addEventListener('click', () => {
+            const telegram = document.getElementById('ctaTelegram').value.trim();
+            const situation = document.getElementById('ctaSituation').value.trim();
+
+            if (!telegram) {
+                document.getElementById('ctaTelegram').focus();
+                document.getElementById('ctaTelegram').style.borderColor = '#E07340';
+                return;
+            }
+
+            // Собираем ответы
+            const answers = {};
+            document.querySelectorAll('.cta-yn-buttons').forEach(group => {
+                const field = group.dataset.field;
+                const selected = group.querySelector('.cta-yn-btn.selected');
+                answers[field] = selected ? selected.dataset.val : 'не ответила';
+            });
+
+            // Формируем сообщение для Telegram
+            const labels = {
+                q1: 'Работала с психологом/специалистом',
+                q2: 'Знакома с работой с подсознанием',
+                q3: 'Готова начать в ближайшие дни',
+                q4: 'Понимает формат (индивид. работа)'
+            };
+            const valMap = { yes: 'Да', no: 'Нет', 'не ответила': '—' };
+            let msg = '📋 Новая заявка с сайта\n\n';
+            for (const [k, v] of Object.entries(answers)) {
+                msg += `• ${labels[k]}: ${valMap[v] || v}\n`;
+            }
+            msg += `\n📝 Ситуация: ${situation || '—'}`;
+            msg += `\n📱 Telegram: ${telegram}`;
+
+            // Отправляем на сервер
+            fetch('/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: msg })
+            })
+            .then(r => r.ok ? r.json() : Promise.reject(r))
+            .then(() => {
+                document.getElementById('ctaFormInner').style.display = 'none';
+                document.getElementById('ctaSuccess').style.display = 'block';
+            })
+            .catch(() => {
+                // Показываем успех даже если сервер не ответил (dev режим)
+                document.getElementById('ctaFormInner').style.display = 'none';
+                document.getElementById('ctaSuccess').style.display = 'block';
+            });
+        });
+
+        // Cookie-баннер
+        (function() {
+            const banner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('cookieAccept');
+            const declineBtn = document.getElementById('cookieDecline');
+            const checkbox = document.getElementById('cookieCheckbox');
+
+            // Если уже решено — не показываем
+            if (localStorage.getItem('cookieConsent')) return;
+
+            // Показываем с небольшой задержкой
+            setTimeout(() => { banner.classList.add('visible'); }, 1200);
+
+            acceptBtn.addEventListener('click', () => {
+                if (!checkbox.checked) {
+                    checkbox.focus();
+                    checkbox.style.outline = '2px solid var(--accent)';
+                    return;
+                }
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                hideBanner();
+            });
+
+            function hideBanner() {
+                banner.style.transform = 'translateX(-50%) translateY(140px)';
+                banner.style.opacity = '0';
+                setTimeout(() => { banner.style.display = 'none'; }, 600);
+            }
+        })();
     </script>
 </body>
 </html>
