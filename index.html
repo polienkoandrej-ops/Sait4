@@ -457,7 +457,7 @@
             padding: 88px 0 100px;
             position: relative;
             border-top: 1px solid var(--border-subtle);
-            background: linear-gradient(180deg, #0B0E12 0%, #11151F 100%);
+            background: linear-gradient(180deg, #0B0E12 0%, #131822 100%);
         }
 
         .section-badge {
@@ -695,17 +695,17 @@
             padding: 88px 0 100px;
             position: relative;
             border-top: 1px solid var(--border-subtle);
-            background: linear-gradient(180deg, #11151F 0%, #171E2B 50%, #1F2738 100%);
+            background: linear-gradient(180deg, #131822 0%, #1C2433 100%);
         }
 
         /* ==========================================================================
-           ПЛАВНОЕ МЕДЛЕННОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ СКРОЛЛЕ
+           ПЛАВНОЕ МЕДЛЕННОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ СКРОЛЛЕ (МАКСИМАЛЬНОЕ ЗАМЕДЛЕНИЕ 2.8s)
            ========================================================================== */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: opacity 2.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
@@ -715,31 +715,226 @@
         }
 
         /* ==========================================================================
-           БЛОК 4: Точки узнавания (Премиальная светлая палитра / Рассвет)
+           БЛОК 4: Точки узнавания (Переход от сумерек к утреннему свету)
            ========================================================================== */
         .situations-section {
             padding: 100px 0 110px;
             position: relative;
-            background: linear-gradient(180deg, #1F2738 0%, #293345 6%, #424D63 14%, #7E8BA3 24%, #CAD1DE 36%, #F2F4F8 50%, #FAFBFD 100%);
-            color: #191E28;
+            background: linear-gradient(180deg, #1C2433 0%, #2A364A 20%, #4D5E79 45%, #9EAFCA 70%, #E6EAF2 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .situations-section .section-badge {
-            color: var(--accent);
+            color: #FFB07C;
         }
 
         .situations-section .section-title {
-            color: #141821;
+            color: #FFFFFF;
         }
 
         .situations-section .section-lead {
-            color: #525C6E;
+            color: #D3DBE8;
         }
 
         .situations-section .highlight-text {
-            color: #141821;
+            color: #FFFFFF;
             font-weight: 700;
+        }
+
+        /* ==========================================================================
+           БЛОК 5: Экспресс-аудит (Интерактивный тест 5 вопросов Да/Нет)
+           ========================================================================== */
+        .quiz-section {
+            padding: 100px 0 110px;
+            position: relative;
+            background: linear-gradient(180deg, #E6EAF2 0%, #F5F7FA 35%, #FFFFFF 100%);
+            color: #191E28;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .quiz-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .quiz-section .section-badge {
+            color: var(--accent);
+        }
+
+        .quiz-section .section-title {
+            color: #141821;
+        }
+
+        .quiz-section .section-lead {
+            color: #475467;
+        }
+
+        .quiz-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(224, 115, 64, 0.28);
+            border-radius: 24px;
+            padding: 44px 40px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.06), 0 0 30px rgba(224, 115, 64, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .quiz-step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .quiz-step-badge {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            background: rgba(224, 115, 64, 0.08);
+            border: 1px solid rgba(224, 115, 64, 0.2);
+            border-radius: 8px;
+        }
+
+        .quiz-progress-bar {
+            height: 6px;
+            background: rgba(0, 0, 0, 0.06);
+            border-radius: 4px;
+            flex-grow: 1;
+            margin-left: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: var(--accent-gradient);
+            width: 20%;
+            border-radius: 4px;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .quiz-question-box {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .quiz-question-category {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .quiz-question-text {
+            font-size: clamp(19px, 2.2vw, 24px);
+            font-weight: 700;
+            color: #141821;
+            line-height: 1.45;
+            margin-bottom: 36px;
+            min-height: 70px;
+        }
+
+        .quiz-options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .quiz-btn {
+            flex: 1;
+            padding: 18px 28px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 14px;
+            border: 2px solid rgba(224, 115, 64, 0.25);
+            background: #FFFFFF;
+            color: #161B24;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .quiz-btn:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(224, 115, 64, 0.18);
+        }
+
+        .quiz-btn-yes:hover {
+            background: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .quiz-btn-no:hover {
+            background: #F1F4F9;
+            color: #161B24;
+        }
+
+        .quiz-result {
+            display: none;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .quiz-result-badge {
+            font-size: 12px;
+            font-weight: 800;
+            color: #C85F2D;
+            background: rgba(224, 115, 64, 0.1);
+            border: 1px solid rgba(224, 115, 64, 0.3);
+            padding: 6px 14px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .quiz-result-title {
+            font-size: clamp(22px, 2.5vw, 28px);
+            font-weight: 800;
+            color: #141821;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .quiz-result-body {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #475467;
+            margin-bottom: 32px;
+        }
+
+        .quiz-result-body p {
+            margin-bottom: 14px;
+        }
+
+        .quiz-result-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-reset-btn {
+            background: none;
+            border: none;
+            color: #718096;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 10px 14px;
+            transition: color 0.2s ease;
+        }
+
+        .quiz-reset-btn:hover {
+            color: var(--accent);
         }
 
         .situations-grid {
@@ -1289,6 +1484,72 @@
 
             </div>
         </section>
+
+        <!-- БЛОК 5: Экспресс-аудит (Интерактивный тест 5 вопросов Да/Нет) -->
+        <section class="quiz-section" id="quiz">
+            <div class="container quiz-container">
+
+                <div class="section-badge">Экспресс-диагностика</div>
+
+                <h2 class="section-title">
+                    Проверьте, включён ли у вашего организма режим биологической защиты
+                </h2>
+
+                <div class="section-lead">
+                    <p>
+                        Ответьте честно на 5 вопросов («Да» или «Нет»), чтобы понять, почему тело блокирует сброс веса и какую задачу решает ваше подсознание.
+                    </p>
+                </div>
+
+                <div class="quiz-card reveal-on-scroll" id="quizCard">
+                    <!-- Блок текущего вопроса -->
+                    <div id="quizQuestionBox" class="quiz-question-box">
+                        <div class="quiz-step-indicator">
+                            <span class="quiz-step-badge" id="quizStepBadge">Вопрос 1 из 5</span>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgressFill"></div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question-category" id="quizQuestionCategory">Реакция на стресс</div>
+                        <h3 class="quiz-question-text" id="quizQuestionText">
+                            Замечаете ли вы, что вес замирает или начинает расти именно в периоды затяжного напряжения, проблем в семье или перегрузок на работе?
+                        </h3>
+
+                        <div class="quiz-options">
+                            <button type="button" class="quiz-btn quiz-btn-yes" id="quizBtnYes">
+                                <span>Да</span>
+                            </button>
+                            <button type="button" class="quiz-btn quiz-btn-no" id="quizBtnNo">
+                                <span>Нет</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Блок результата теста -->
+                    <div id="quizResultBox" class="quiz-result">
+                        <span class="quiz-result-badge">Результат диагностики</span>
+                        <h3 class="quiz-result-title" id="quizResultTitle">
+                            Вердикт: У вашего организма включён активный режим биологической защиты
+                        </h3>
+                        <div class="quiz-result-body" id="quizResultBody">
+                            <p>Вы ответили «Да» на ключевые маркеры защитной реакции подсознания.</p>
+                            <p>Ваше подсознание расценивает жировые клетки не как лишний груз, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спортзал воспринимаются телом как прямая угроза и неизбежно приводят к новым срывам.</p>
+                            <p><strong>Что делать:</strong> Сначала нужно снять сигнал тревоги в подсознании — и только тогда организм сам спокойно отпустит жировую ткань.</p>
+                        </div>
+                        <div class="quiz-result-actions">
+                            <a href="#anketa" class="btn btn-primary">
+                                <span>Заполнить анкету на разбор ситуации</span>
+                            </a>
+                            <button type="button" class="quiz-reset-btn" id="quizResetBtn">
+                                Пройти тест заново
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <script>
@@ -1334,6 +1595,103 @@
 
                 revealElements.forEach(el => revealObserver.observe(el));
             }
+
+            // Интерактивный экспресс-тест (5 вопросов Да/Нет)
+            const quizData = [
+                {
+                    cat: "Реакция на стресс",
+                    text: "Замечаете ли вы, что вес замирает или начинает расти именно в периоды затяжного напряжения, проблем в семье или перегрузок на работе?"
+                },
+                {
+                    cat: "Вечерний сброс контроля",
+                    text: "Бывает ли так, что днём вы держите строгий самоконтроль, а вечером еда становится единственным доступным способом выдохнуть и почувствовать покой?"
+                },
+                {
+                    cat: "Эффект маятника",
+                    text: "Случалось ли, что после жестких диет или спортзала вес сначала падал, а затем организм с удвоенной силой возвращал всё сброшенное плюс пару килограммов сверху?"
+                },
+                {
+                    cat: "Фоновая тревога",
+                    text: "Ловите ли вы себя на ощущении, что не можете расслабиться, постоянно всё контролируете и испытываете фоновое чувство вины перед собой за тело или еду?"
+                },
+                {
+                    cat: "Функция щита",
+                    text: "Есть ли ощущение, что лишний вес на самом деле спасает вас от лишнего внимания, делает «невидимой» или закрывает от уязвимости и новой боли?"
+                }
+            ];
+
+            let currentQuizIndex = 0;
+            let yesAnswersCount = 0;
+
+            const qBox = document.getElementById('quizQuestionBox');
+            const rBox = document.getElementById('quizResultBox');
+            const stepBadge = document.getElementById('quizStepBadge');
+            const progressFill = document.getElementById('quizProgressFill');
+            const catEl = document.getElementById('quizQuestionCategory');
+            const textEl = document.getElementById('quizQuestionText');
+            const btnYes = document.getElementById('quizBtnYes');
+            const btnNo = document.getElementById('quizBtnNo');
+            const resetBtn = document.getElementById('quizResetBtn');
+            const resultBody = document.getElementById('quizResultBody');
+
+            function showQuestion(index) {
+                if (!textEl) return;
+                qBox.style.opacity = '0';
+                qBox.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    const item = quizData[index];
+                    if (stepBadge) stepBadge.textContent = `Вопрос ${index + 1} из ${quizData.length}`;
+                    if (progressFill) progressFill.style.width = `${((index + 1) / quizData.length) * 100}%`;
+                    if (catEl) catEl.textContent = item.cat;
+                    if (textEl) textEl.textContent = item.text;
+                    
+                    qBox.style.opacity = '1';
+                    qBox.style.transform = 'translateY(0)';
+                }, 180);
+            }
+
+            function handleAnswer(isYes) {
+                if (isYes) yesAnswersCount++;
+                currentQuizIndex++;
+
+                if (currentQuizIndex < quizData.length) {
+                    showQuestion(currentQuizIndex);
+                } else {
+                    showResults();
+                }
+            }
+
+            function showResults() {
+                if (qBox) qBox.style.display = 'none';
+                if (rBox) rBox.style.display = 'block';
+
+                if (resultBody) {
+                    if (yesAnswersCount >= 3) {
+                        resultBody.innerHTML = `
+                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> ключевых маркеров аварийного режима.</p>
+                            <p>Ваше подсознание расценивает жировые клетки не как лишний вес, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спорт воспринимаются телом как угроза и вызывают только новые срывы.</p>
+                            <p><strong>Решение:</strong> Снять внутренний аварийный сигнал в подсознании — и тогда организм сам перестанет удерживать жировую ткань.</p>
+                        `;
+                    } else {
+                        resultBody.innerHTML = `
+                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> маркеров.</p>
+                            <p>У вас умеренная защитная реакция. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный триггер удержания, который мешает телу сбросить лишнее.</p>
+                            <p><strong>Решение:</strong> Найти точную причину застоя на коротком индивидуальном разборе.</p>
+                        `;
+                    }
+                }
+            }
+
+            if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true));
+            if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false));
+            if (resetBtn) resetBtn.addEventListener('click', () => {
+                currentQuizIndex = 0;
+                yesAnswersCount = 0;
+                if (rBox) rBox.style.display = 'none';
+                if (qBox) qBox.style.display = 'block';
+                showQuestion(0);
+            });
         });
     </script>
 </body>
