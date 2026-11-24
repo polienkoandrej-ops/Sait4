@@ -55,16 +55,24 @@
         }
 
         body {
-            background-color: var(--bg-main);
+            background: linear-gradient(180deg, 
+                #0B0E12 0%, 
+                #0E131C 12%, 
+                #131A26 25%, 
+                #1D2636 38%, 
+                #2C374A 52%, 
+                #4D5C75 66%, 
+                #8595AE 78%, 
+                #C5CEDC 88%, 
+                #EFF2F7 95%, 
+                #FAFBFD 100%
+            );
             color: var(--text-primary);
             font-family: var(--font-main);
             font-size: 16px;
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 85% 15%, rgba(224, 115, 64, 0.1) 0%, transparent 45%),
-                radial-gradient(circle at 15% 65%, rgba(224, 115, 64, 0.05) 0%, transparent 50%);
-            background-attachment: fixed;
+            min-height: 100vh;
         }
 
         .container {
@@ -456,8 +464,7 @@
         .anatomy-section {
             padding: 88px 0 100px;
             position: relative;
-            border-top: 1px solid var(--border-subtle);
-            background: linear-gradient(180deg, #0B0E12 0%, #131822 100%);
+            background: transparent;
         }
 
         .section-badge {
@@ -694,18 +701,17 @@
         .method-section {
             padding: 88px 0 100px;
             position: relative;
-            border-top: 1px solid var(--border-subtle);
-            background: linear-gradient(180deg, #131822 0%, #1C2433 100%);
+            background: transparent;
         }
 
         /* ==========================================================================
-           ПЛАВНОЕ МЕДЛЕННОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ СКРОЛЛЕ (МАКСИМАЛЬНОЕ ЗАМЕДЛЕНИЕ 2.8s)
+           ПООЧЕРЕДНОЕ (КАСКАДНОЕ) МЕДЛЕННОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ СКРОЛЛЕ
            ========================================================================== */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 2.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(38px);
+            transition: opacity 2.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 2.6s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
@@ -714,14 +720,19 @@
             transform: translateY(0);
         }
 
+        /* Каскадные задержки: карточки выплывают мягко по одной */
+        .stagger-1 { transition-delay: 0s; }
+        .stagger-2 { transition-delay: 0.35s; }
+        .stagger-3 { transition-delay: 0.7s; }
+        .stagger-4 { transition-delay: 1.05s; }
+
         /* ==========================================================================
-           БЛОК 4: Точки узнавания (Переход от сумерек к утреннему свету)
+           БЛОК 4: Точки узнавания
            ========================================================================== */
         .situations-section {
             padding: 100px 0 110px;
             position: relative;
-            background: linear-gradient(180deg, #1C2433 0%, #2A364A 20%, #4D5E79 45%, #9EAFCA 70%, #E6EAF2 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: transparent;
         }
 
         .situations-section .section-badge {
@@ -733,7 +744,7 @@
         }
 
         .situations-section .section-lead {
-            color: #D3DBE8;
+            color: #E2E8F0;
         }
 
         .situations-section .highlight-text {
@@ -747,9 +758,8 @@
         .quiz-section {
             padding: 100px 0 110px;
             position: relative;
-            background: linear-gradient(180deg, #E6EAF2 0%, #F5F7FA 35%, #FFFFFF 100%);
+            background: transparent;
             color: #191E28;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .quiz-container {
@@ -862,19 +872,11 @@
         }
 
         .quiz-btn:hover {
-            border-color: var(--accent);
+            border-color: #2D3748;
+            background: #F8FAFC;
+            color: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(224, 115, 64, 0.18);
-        }
-
-        .quiz-btn-yes:hover {
-            background: var(--accent);
-            color: #FFFFFF;
-        }
-
-        .quiz-btn-no:hover {
-            background: #F1F4F9;
-            color: #161B24;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
         }
 
         .quiz-result {
@@ -1210,19 +1212,19 @@
 
                 <!-- 3 Опорных факта с синхронным масштабированием карточки и текста -->
                 <div class="hero-facts-grid">
-                    <div class="fact-card reveal-on-scroll">
+                    <div class="fact-card reveal-on-scroll stagger-1">
                         <div class="fact-icon">01</div>
                         <h3 class="fact-title">Биологическая честность</h3>
                         <p class="fact-text">Без подсчета калорий, пищевых запретов и войны с собственным телом.</p>
                     </div>
 
-                    <div class="fact-card reveal-on-scroll">
+                    <div class="fact-card reveal-on-scroll stagger-2">
                         <div class="fact-icon">02</div>
                         <h3 class="fact-title">8 недель один на один</h3>
                         <p class="fact-text">Индивидуальная работа до момента, когда организм сам переключается на сброс жира.</p>
                     </div>
 
-                    <div class="fact-card reveal-on-scroll">
+                    <div class="fact-card reveal-on-scroll stagger-3">
                         <div class="fact-icon">03</div>
                         <h3 class="fact-title">Прозрачность и безопасность</h3>
                         <p class="fact-text">Входной отбор до начала работы и 100% возврат средств, если метод вам не подходит.</p>
@@ -1285,7 +1287,7 @@
 
                 <!-- 3 Карточки анатомии срывов (Вариант 3: Мощное масштабирование + Раскрытие инсайта) -->
                 <div class="anatomy-cards-grid">
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-1">
                         <div class="anatomy-step-num">01</div>
                         <h3 class="anatomy-card-title">Жир как физический щит</h3>
                         <p class="anatomy-card-text">
@@ -1297,7 +1299,7 @@
                         </div>
                     </div>
 
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-2">
                         <div class="anatomy-step-num">02</div>
                         <h3 class="anatomy-card-title">Почему ограничения вызывают срыв</h3>
                         <p class="anatomy-card-text">
@@ -1309,7 +1311,7 @@
                         </div>
                     </div>
 
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-3">
                         <div class="anatomy-step-num">03</div>
                         <h3 class="anatomy-card-title">Точка контроля находится внутри</h3>
                         <p class="anatomy-card-text">
@@ -1353,7 +1355,7 @@
 
                 <!-- 3 Карточки этапов с медитативной 2-секундной анимацией -->
                 <div class="anatomy-cards-grid">
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-1">
                         <div class="anatomy-step-num">01</div>
                         <h3 class="anatomy-card-title">Находим первопричину напряжения</h3>
                         <p class="anatomy-card-text">
@@ -1365,7 +1367,7 @@
                         </div>
                     </div>
 
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-2">
                         <div class="anatomy-step-num">02</div>
                         <h3 class="anatomy-card-title">Коррекция в изменённом состоянии сознания</h3>
                         <p class="anatomy-card-text">
@@ -1377,7 +1379,7 @@
                         </div>
                     </div>
 
-                    <div class="anatomy-card reveal-on-scroll">
+                    <div class="anatomy-card reveal-on-scroll stagger-3">
                         <div class="anatomy-step-num">03</div>
                         <h3 class="anatomy-card-title">Завершение работы по факту результата</h3>
                         <p class="anatomy-card-text">
@@ -1418,7 +1420,7 @@
 
                 <!-- 4 Карточки узнавания (Светлая палитра + медленное появление при скролле) -->
                 <div class="situations-grid">
-                    <div class="situation-card reveal-on-scroll">
+                    <div class="situation-card reveal-on-scroll stagger-1">
                         <div class="anatomy-step-num">01</div>
                         <h3 class="anatomy-card-title">«Весь день держусь, а вечером опустошаю холодильник»</h3>
                         <p class="anatomy-card-text">
@@ -1430,7 +1432,7 @@
                         </div>
                     </div>
 
-                    <div class="situation-card reveal-on-scroll">
+                    <div class="situation-card reveal-on-scroll stagger-2">
                         <div class="anatomy-step-num">02</div>
                         <h3 class="anatomy-card-title">«Вес замер после стресса или резких перемен»</h3>
                         <p class="anatomy-card-text">
@@ -1442,7 +1444,7 @@
                         </div>
                     </div>
 
-                    <div class="situation-card reveal-on-scroll">
+                    <div class="situation-card reveal-on-scroll stagger-3">
                         <div class="anatomy-step-num">03</div>
                         <h3 class="anatomy-card-title">«Тело как барьер от уязвимости и боли»</h3>
                         <p class="anatomy-card-text">
@@ -1454,7 +1456,7 @@
                         </div>
                     </div>
 
-                    <div class="situation-card reveal-on-scroll">
+                    <div class="situation-card reveal-on-scroll stagger-4">
                         <div class="anatomy-step-num">04</div>
                         <h3 class="anatomy-card-title">«Стыд, оверсайз и побег от зеркал»</h3>
                         <p class="anatomy-card-text">
