@@ -939,6 +939,105 @@
             color: var(--accent);
         }
 
+        /* ==========================================================================
+           БЛОК 6: Автор метода (Андрей Полиенко)
+           ========================================================================== */
+        .author-manifesto-section {
+            padding: 100px 0 110px;
+            position: relative;
+            background: transparent;
+            color: #191E28;
+        }
+
+        .author-manifesto-section .section-badge {
+            color: var(--accent);
+        }
+
+        .author-manifesto-section .section-title {
+            color: #141821;
+        }
+
+        .author-manifesto-section .section-lead {
+            color: #475467;
+        }
+
+        .manifesto-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 56px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .manifesto-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 34px 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 1.5s ease, 
+                        background 1.5s ease,
+                        opacity 1.2s ease;
+            will-change: transform, box-shadow;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .manifesto-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: #E07340;
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(224, 115, 64, 0.22);
+            z-index: 20;
+        }
+
+        .manifesto-cards-grid:hover .manifesto-card:not(:hover) {
+            opacity: 0.65;
+            transform: scale(0.98);
+        }
+
+        .manifesto-card .anatomy-step-num {
+            background: rgba(224, 115, 64, 0.08);
+            border: 1px solid rgba(224, 115, 64, 0.2);
+            color: #C85F2D;
+            align-self: flex-start;
+            margin-bottom: 18px;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 8px;
+            transition: all 0.35s ease;
+        }
+
+        .manifesto-card:hover .anatomy-step-num {
+            background: var(--accent);
+            color: #FFFFFF;
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        .manifesto-card-title {
+            color: #161B24;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.35;
+        }
+
+        .manifesto-card:hover .manifesto-card-title {
+            color: #0E1219;
+        }
+
+        .manifesto-card-text {
+            color: #4B5565;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
         .situations-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1069,11 +1168,11 @@
                 padding: 60px 0 72px;
             }
 
-            .situations-section {
+            .situations-section, .quiz-section, .author-manifesto-section {
                 padding: 64px 0 76px;
             }
 
-            .situations-grid {
+            .situations-grid, .manifesto-cards-grid {
                 grid-template-columns: 1fr;
                 gap: 18px;
             }
@@ -1548,6 +1647,59 @@
                             </button>
                         </div>
                     </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- БЛОК 6: Автор метода (Андрей Полиенко) -->
+        <section class="author-manifesto-section" id="author-manifesto">
+            <div class="container">
+
+                <div class="section-badge">Авторский подход</div>
+
+                <h2 class="section-title">
+                    Андрей Полиенко: почему я работаю с первопричиной, а не продаю временные иллюзии
+                </h2>
+
+                <div class="section-lead">
+                    <p>
+                        Рынок переполнен шаблонными марафонами, кураторами без опыта и диетами, которые калечат психику и внушают чувство вины. Я принципиально выбрал другой путь.
+                    </p>
+                </div>
+
+                <!-- 3 Карточки принципов работы с каскадным поочередным появлением -->
+                <div class="manifesto-cards-grid">
+                    <div class="manifesto-card reveal-on-scroll stagger-1">
+                        <div class="anatomy-step-num">01</div>
+                        <h3 class="manifesto-card-title">Работа только лично — без кураторов и посредников</h3>
+                        <p class="manifesto-card-text">
+                            Я не передаю вас помощникам или «наставникам». Работа с подсознанием и глубокими эмоциями требует абсолютной конфиденциальности и ювелирной точности. Каждую сессию я провожу лично, ведя вас в одной связке до момента, пока организм не переключится.
+                        </p>
+                    </div>
+
+                    <div class="manifesto-card reveal-on-scroll stagger-2">
+                        <div class="anatomy-step-num">02</div>
+                        <h3 class="manifesto-card-title">Никаких запретов на еду и войны с собой</h3>
+                        <p class="manifesto-card-text">
+                            Я не диетолог и не тренер. Я не считаю ваши калории и не заставляю терпеть голод. Моя задача — устранить внутреннюю тревогу и снять команду на защиту. Когда уходит первопричина, тело само отказывается от лишней еды без насилия над волей.
+                        </p>
+                    </div>
+
+                    <div class="manifesto-card reveal-on-scroll stagger-3">
+                        <div class="anatomy-step-num">03</div>
+                        <h3 class="manifesto-card-title">Честность и фокус на результате (срок ДО 8 недель)</h3>
+                        <p class="manifesto-card-text">
+                            Я не растягиваю консультации на месяцы ради процесса. Мы работаем динамически: как только подсознание сбросило аварийный режим и результат зафиксирован — работа окончена. Если метод вам не подходит — действует 100% гарантия возврата в первые 14 дней.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Выводной блок без кавычек -->
+                <div class="takeaway-card-light reveal-on-scroll">
+                    <p class="takeaway-text">
+                        Моя цель — не привязать вас к бесконечным консультациям, а <span class="takeaway-highlight">один раз устранить внутренний конфликт</span>, чтобы вернуть вашему телу безопасность, спокойствие и естественный комфортный вес.
+                    </p>
                 </div>
 
             </div>
