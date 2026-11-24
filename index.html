@@ -3,415 +3,1338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Индивидуальная программа перезагрузки для мужчин 35–45. Работа с подсознанием через гипнотерапию. Результат за 8 недель. Гарантия результата или возврат денег.">
-    <link rel="canonical" href="https://exit-crisis.com/">
-    <meta property="og:title" content="Техническое Регулирование Психики | Андрей Полиенко">
-    <meta property="og:description" content="Кризис среднего возраста — это не тупик. Это этап. Пройдите его за 8 недель через работу с подсознанием.">
-    <meta property="og:image" content="https://exit-crisis.com/img/author.png">
-    <meta property="og:url" content="https://exit-crisis.com/">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="img/favicon.webp" type="image/webp">
-    <title>Техническое Регулирование Психики | Андрей Полиенко</title>
+    <meta name="description" content="Андрей Полиенко — работа с первопричиной накопления жировых клеток. Устранение внутренней причины, чтобы организм сам избавился от жира.">
+    <title>Андрей Полиенко | Работа с первопричиной накопления жировых клеток</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2.8">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Андрей Полиенко - Техническое Регулирование Психики",
-      "image": "https://exit-crisis.com/img/author.png",
-      "description": "Индивидуальная программа перезагрузки для мужчин 35–45. Работа с подсознанием через гипнотерапию. Результат за 8 недель.",
-      "url": "https://exit-crisis.com/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "UA"
-      },
-      "priceRange": "$$",
-      "knowsAbout": ["гипнотерапия", "психотерапия", "преодоление кризиса среднего возраста", "психологическое сопровождение"]
-    }
-    </script>
+    <style>
+        /* ==========================================================================
+           ПРЕМИАЛЬНАЯ ТЁМНАЯ ТЕМА С ИНТЕРАКТИВНЫМИ ЭФФЕКТАМИ
+           ========================================================================== */
+        :root {
+            --bg-main: #0B0E12;
+            --bg-surface: #12161E;
+            --bg-card: #161B24;
+            --bg-card-hover: #1D232F;
+            
+            --text-primary: #F4F6F9;
+            --text-secondary: #B1B9C6;
+            --text-muted: #7A8595;
+            
+            /* Насыщенный тёплый медный / янтарно-терракотовый акцент */
+            --accent: #E07340;
+            --accent-hover: #C85F2D;
+            --accent-gradient: linear-gradient(135deg, #EB804D 0%, #C85F2D 100%);
+            --accent-glow: rgba(224, 115, 64, 0.4);
+            --accent-subtle: rgba(224, 115, 64, 0.12);
+            
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-card: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(224, 115, 64, 0.5);
+            
+            --shadow-card: 0 10px 32px rgba(0, 0, 0, 0.45);
+            --shadow-card-hover: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 28px rgba(224, 115, 64, 0.2);
+            --shadow-button: 0 8px 28px rgba(224, 115, 64, 0.38);
+            --shadow-button-hover: 0 12px 36px rgba(224, 115, 64, 0.58);
+            
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 85% 15%, rgba(224, 115, 64, 0.1) 0%, transparent 45%),
+                radial-gradient(circle at 15% 65%, rgba(224, 115, 64, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Шапка */
+        .site-header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(11, 14, 18, 0.92);
+            backdrop-filter: blur(14px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.2px;
+        }
+
+        .brand-divider {
+            color: var(--accent);
+        }
+
+        .brand-desc {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Главный экран (Hero) */
+        .hero-section {
+            padding: 56px 0 96px;
+            position: relative;
+        }
+
+        /* Верхняя композиция: Текст + Фотография */
+        .hero-grid-top {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 52px;
+            align-items: flex-start;
+            margin-bottom: 52px;
+        }
+
+        .hero-title {
+            font-size: clamp(32px, 4.4vw, 50px);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+            margin-bottom: 28px;
+        }
+
+        .hero-title-accent {
+            color: var(--accent);
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline;
+        }
+
+        .hero-lead {
+            font-size: clamp(16px, 1.6vw, 19px);
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .hero-lead p {
+            margin-bottom: 16px;
+        }
+
+        .hero-lead p:last-child {
+            margin-bottom: 0;
+        }
+
+        .lead-strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Карточка с фотографией автора */
+        .author-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .author-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .author-photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        /* Эффект перехода: чёрно-белое -> цветное с увеличенным интервалом 3.5s */
+        .author-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: grayscale(100%);
+            transition: filter 3.5s ease-in-out, transform 0.8s ease;
+            will-change: filter, transform;
+        }
+
+        /* Активное цветное состояние */
+        .author-card:hover .author-photo-wrapper img,
+        .author-photo-wrapper.colorized img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .author-card-info {
+            padding: 16px 8px 6px;
+            text-align: center;
+        }
+
+        .author-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .author-card-role {
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* 3 Карточки опорных фактов (Вариант 1: Всплывающий фокус 1.36x над соседями) */
+        .hero-facts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 30px 24px;
+            box-shadow: var(--shadow-card);
+            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 1.5s ease, 
+                        background 1.5s ease,
+                        opacity 1.2s ease;
+            will-change: transform, box-shadow;
+            transform-origin: center center;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        /* При наведении: карточка плавно всплывает в 1.36 раза с сочным ярким янтарным свечением */
+        .fact-card:hover {
+            transform: translateY(-14px) scale(1.36);
+            z-index: 40;
+            border-color: #FFA56E;
+            background: linear-gradient(150deg, #242C3B 0%, #171D27 100%);
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9), 
+                        0 0 55px rgba(224, 115, 64, 0.75), 
+                        inset 0 0 24px rgba(224, 115, 64, 0.25);
+        }
+
+        /* Эффект прожектора: соседние карточки в первом блоке мягко затеняются */
+        .hero-facts-grid:hover .fact-card:not(:hover) {
+            opacity: 0.55;
+            transform: scale(0.96);
+        }
+
+        .fact-icon {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1.2px;
+            margin-bottom: 16px;
+            display: inline-block;
+            padding: 5px 14px;
+            background: var(--accent-subtle);
+            border: 1px solid rgba(224, 115, 64, 0.25);
+            border-radius: 8px;
+            transition: all 0.35s ease;
+        }
+
+        .fact-card:hover .fact-icon {
+            background: var(--accent);
+            color: #FFFFFF;
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+            transform: scale(1.1);
+        }
+
+        .fact-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.35;
+            transition: color 0.3s ease;
+        }
+
+        .fact-card:hover .fact-title {
+            color: #FFFFFF;
+        }
+
+        .fact-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* Кнопки действий */
+        .hero-actions {
+            display: flex;
+            align-items: flex-start;
+            gap: 36px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 260px;
+            height: 58px;
+            padding: 0 36px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-main);
+            transition: var(--transition-smooth);
+            text-align: center;
+            position: relative;
+            user-select: none;
+        }
+
+        /* Основная кнопка (Primary) с градиентом и бегущим бликом */
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #FFFFFF;
+            box-shadow: var(--shadow-button);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Бегущий блик под углом */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shineLight 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes shineLight {
+            0% { left: -150%; }
+            22% { left: 160%; }
+            100% { left: 160%; }
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+            filter: brightness(1.08);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 4px 14px rgba(224, 115, 64, 0.4);
+        }
+
+        /* Вторая кнопка: Телеграм-группа */
+        .btn-secondary {
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-card);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-card);
+            border-color: var(--accent);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .action-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            line-height: 1.55;
+            color: var(--text-muted);
+            max-width: 320px;
+        }
+
+        /* Ссылка вниз */
+        .hero-scroll-link {
+            margin-top: 8px;
+        }
+
+        .scroll-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .scroll-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-link:hover {
+            color: var(--accent);
+        }
+
+        .scroll-link:hover .scroll-arrow {
+            transform: translateY(4px);
+        }
+
+        /* ==========================================================================
+           БЛОК 2: Почему диеты, спорт и процедуры не сработали
+           ========================================================================== */
+        .anatomy-section {
+            padding: 88px 0 100px;
+            position: relative;
+            border-top: 1px solid var(--border-subtle);
+            background: linear-gradient(180deg, #0B0E12 0%, #11151F 100%);
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .section-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .section-title {
+            font-size: clamp(28px, 3.8vw, 44px);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+            color: var(--text-primary);
+            margin-bottom: 28px;
+            max-width: 900px;
+        }
+
+        .section-lead {
+            font-size: clamp(16px, 1.5vw, 18px);
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 56px;
+            max-width: 860px;
+        }
+
+        .section-lead p {
+            margin-bottom: 14px;
+        }
+
+        .section-lead p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* 3 Карточки анатомии срывов (Вариант 3: Мощное масштабирование + Раскрытие инсайта) */
+        .anatomy-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 56px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .anatomy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 32px 26px;
+            box-shadow: var(--shadow-card);
+            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 1.5s ease, 
+                        background 1.5s ease,
+                        opacity 1.2s ease;
+            will-change: transform, box-shadow;
+            transform-origin: center center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        /* При наведении: карточка плавно всплывает в 1.22 раза, зажигая светящийся контур */
+        .anatomy-card:hover {
+            transform: translateY(-12px) scale(1.22);
+            z-index: 30;
+            border-color: #FFA56E;
+            background: linear-gradient(150deg, #222938 0%, #161B25 100%);
+            box-shadow: 0 28px 65px rgba(0, 0, 0, 0.85), 0 0 45px rgba(224, 115, 64, 0.55);
+        }
+
+        /* Эффект прожектора: соседние неактивные карточки мягко приглушаются */
+        .anatomy-cards-grid:hover .anatomy-card:not(:hover) {
+            opacity: 0.55;
+            transform: scale(0.96);
+        }
+
+        .anatomy-step-num {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            display: inline-block;
+            padding: 5px 14px;
+            background: var(--accent-subtle);
+            border: 1px solid rgba(224, 115, 64, 0.25);
+            border-radius: 8px;
+            align-self: flex-start;
+            transition: all 0.35s ease;
+        }
+
+        /* Плашка номера ярко загорается при наведении */
+        .anatomy-card:hover .anatomy-step-num {
+            background: var(--accent);
+            color: #FFFFFF;
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+            transform: scale(1.1);
+        }
+
+        .anatomy-card-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.35;
+            transition: color 0.3s ease;
+        }
+
+        .anatomy-card:hover .anatomy-card-title {
+            color: #FFFFFF;
+        }
+
+        .anatomy-card-text {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Раскрывающийся скрытый инсайт */
+        .anatomy-insight {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px dashed rgba(224, 115, 64, 0.4);
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(8px);
+            transition: opacity 1.4s ease 0.2s, max-height 1.4s ease, transform 1.4s ease 0.2s;
+        }
+
+        .anatomy-card:hover .anatomy-insight {
+            opacity: 1;
+            max-height: 140px;
+            transform: translateY(0);
+        }
+
+        .insight-tag {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .insight-desc {
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: #F1F5F9;
+            font-weight: 500;
+        }
+
+        /* Выводной блок (Takeaway с тюнингом и светящимся градиентом) */
+        .takeaway-card {
+            background: linear-gradient(135deg, rgba(28, 35, 47, 0.95) 0%, rgba(18, 22, 30, 0.95) 100%);
+            border: 1px solid rgba(224, 115, 64, 0.35);
+            border-radius: 18px;
+            padding: 38px 44px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 28px rgba(224, 115, 64, 0.18);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .takeaway-card::before {
+            content: '«';
+            position: absolute;
+            top: -25px;
+            right: 28px;
+            font-size: 150px;
+            font-family: Georgia, serif;
+            color: rgba(224, 115, 64, 0.08);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+
+        .takeaway-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(224, 115, 64, 0.7);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(224, 115, 64, 0.35);
+        }
+
+        .takeaway-card:hover::before {
+            color: rgba(224, 115, 64, 0.16);
+            transform: scale(1.08) translateY(-4px);
+        }
+
+        .takeaway-text {
+            font-size: clamp(16px, 1.5vw, 19px);
+            line-height: 1.75;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .takeaway-highlight {
+            color: var(--accent);
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFB07C 0%, #E07340 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ==========================================================================
+           БЛОК 3: Индивидуальная работа (Формат и этапы)
+           ========================================================================== */
+        .method-section {
+            padding: 88px 0 100px;
+            position: relative;
+            border-top: 1px solid var(--border-subtle);
+            background: linear-gradient(180deg, #11151F 0%, #171E2B 50%, #1F2738 100%);
+        }
+
+        /* ==========================================================================
+           ПЛАВНОЕ МЕДЛЕННОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ СКРОЛЛЕ
+           ========================================================================== */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           БЛОК 4: Точки узнавания (Премиальная светлая палитра / Рассвет)
+           ========================================================================== */
+        .situations-section {
+            padding: 100px 0 110px;
+            position: relative;
+            background: linear-gradient(180deg, #1F2738 0%, #293345 6%, #424D63 14%, #7E8BA3 24%, #CAD1DE 36%, #F2F4F8 50%, #FAFBFD 100%);
+            color: #191E28;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .situations-section .section-badge {
+            color: var(--accent);
+        }
+
+        .situations-section .section-title {
+            color: #141821;
+        }
+
+        .situations-section .section-lead {
+            color: #525C6E;
+        }
+
+        .situations-section .highlight-text {
+            color: #141821;
+            font-weight: 700;
+        }
+
+        .situations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-bottom: 56px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .situation-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 34px 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 1.5s ease, 
+                        background 1.5s ease,
+                        opacity 1.2s ease;
+            will-change: transform, box-shadow;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .situation-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: #E07340;
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(224, 115, 64, 0.22);
+            z-index: 20;
+        }
+
+        .situations-grid:hover .situation-card:not(:hover) {
+            opacity: 0.65;
+            transform: scale(0.98);
+        }
+
+        .situation-card .anatomy-step-num {
+            background: rgba(224, 115, 64, 0.08);
+            border: 1px solid rgba(224, 115, 64, 0.2);
+            color: #C85F2D;
+        }
+
+        .situation-card:hover .anatomy-step-num {
+            background: var(--accent);
+            color: #FFFFFF;
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        .situation-card .anatomy-card-title {
+            color: #161B24;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .situation-card:hover .anatomy-card-title {
+            color: #0E1219;
+        }
+
+        .situation-card .anatomy-card-text {
+            color: #4B5565;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .situation-card .anatomy-insight {
+            background: rgba(224, 115, 64, 0.06);
+            border-left: 3px solid #E07340;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 18px;
+        }
+
+        .situation-card .insight-tag {
+            color: #C85F2D;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .situation-card .insight-desc {
+            color: #2D3748;
+            font-size: 13.5px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Светлый выводной блок (Takeaway) */
+        .takeaway-card-light {
+            background: #FFFFFF;
+            border: 1px solid rgba(224, 115, 64, 0.35);
+            border-radius: 20px;
+            padding: 38px 44px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06), 0 0 25px rgba(224, 115, 64, 0.12);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .takeaway-card-light:hover {
+            transform: translateY(-4px);
+            border-color: rgba(224, 115, 64, 0.7);
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.1), 0 0 35px rgba(224, 115, 64, 0.22);
+        }
+
+        .takeaway-card-light .takeaway-text {
+            color: #1A202C;
+            font-size: clamp(16px, 1.5vw, 19px);
+            line-height: 1.75;
+        }
+
+        .takeaway-action {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 960px) {
+            .anatomy-section {
+                padding: 60px 0 72px;
+            }
+
+            .situations-section {
+                padding: 64px 0 76px;
+            }
+
+            .situations-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .takeaway-card-light {
+                padding: 24px 20px;
+            }
+
+            .takeaway-action {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .anatomy-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .anatomy-cards-grid:hover .anatomy-card:not(:hover) {
+                opacity: 1;
+                transform: none;
+            }
+
+            .anatomy-card:hover {
+                transform: translateY(-4px) scale(1.02);
+            }
+
+            .anatomy-insight {
+                opacity: 1;
+                max-height: none;
+                transform: none;
+                margin-top: 14px;
+            }
+
+            .takeaway-card {
+                padding: 24px 20px;
+            }
+            .hero-grid-top {
+                grid-template-columns: 1fr;
+            }
+
+            .author-card {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .author-photo-wrapper {
+                height: 340px;
+            }
+
+            .hero-facts-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .hero-facts-grid:hover .fact-card:not(:hover) {
+                opacity: 1;
+                transform: none;
+            }
+
+            .fact-card:hover {
+                transform: translateY(-4px) scale(1.02);
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .action-item, .btn, .action-caption {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .brand-desc, .brand-divider {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Шапка -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="brand">
+                <span class="brand-name">Андрей Полиенко</span>
+                <span class="brand-divider">•</span>
+                <span class="brand-desc">Работа с первопричиной накопления жировых клеток</span>
+            </div>
+        </div>
+    </header>
+
     <main>
-        <section class="hero">
-            <div class="container" style="position: relative;">
-                <div class="hero-watermark"></div>
-                <h1 class="hero-title">Кризис среднего возраста — это не тупик.<br>Это то, что с тобой уже происходит.</h1>
-                <p class="hero-subtitle">
-                    Мужчины 35–45 проходят это одинаково:<br>
-                    внешне всё нормально, внутри — усталость, пустота и ощущение, что ты живёшь на автопилоте.<br><br>
-                    Это не ошибка. Это этап. И он не проходит сам.<br><br>
-                    Пройдите бесплатную консультацию: вы чётко поймёте, что происходит с вашей психикой, и получите готовый сценарий выхода из тупика.
-                </p>
-                <div class="hero-action">
-                    <a href="#audit" class="btn btn-primary">Начать аудит состояния</a>
+        <!-- БЛОК 1: Главный экран (Hero) -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+
+                <!-- Верхняя сетка: Текст + Фотография -->
+                <div class="hero-grid-top">
+                    <div class="hero-text-column">
+                        <h1 class="hero-title">
+                            Жировые клетки — это не слабость характера.<br>
+                            <span class="hero-title-accent">Это биологическая защита, которую удерживает организм.</span>
+                        </h1>
+
+                        <div class="hero-lead">
+                            <p class="lead-strong">
+                                Пора посмотреть фактам в лицо: диеты, изнурительный спорт и запреты не работают, пока организм видит прямую необходимость удерживать жировую ткань.
+                            </p>
+                            <p>
+                                Жир не откладывается просто так. У этого процесса всегда есть конкретная внутренняя причина. Я нахожу эту причину и устраняю её.
+                            </p>
+                            <p>
+                                Когда причина исчезает — организм сам принимает биологическое решение избавляться от жировых клеток. И вместе с жиром уходят стыд за своё тело, страх отвержения и чувство вины за еду — а также решаются и другие психологические проблемы, которые годами заставляли организм удерживать эту защиту.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Фотография Андрея Полиенко с эффектом ч/б -> цвет -->
+                    <div class="hero-photo-column">
+                        <div class="author-card">
+                            <div class="author-photo-wrapper" id="authorPhoto">
+                                <picture>
+                                    <source srcset="img/author.webp" type="image/webp">
+                                    <img src="img/author.webp" alt="Андрей Полиенко">
+                                </picture>
+                            </div>
+                            <div class="author-card-info">
+                                <div class="author-card-name">Андрей Полиенко</div>
+                                <div class="author-card-role">Работа с подсознанием и биологией тела</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 3 Опорных факта с синхронным масштабированием карточки и текста -->
+                <div class="hero-facts-grid">
+                    <div class="fact-card reveal-on-scroll">
+                        <div class="fact-icon">01</div>
+                        <h3 class="fact-title">Биологическая честность</h3>
+                        <p class="fact-text">Без подсчета калорий, пищевых запретов и войны с собственным телом.</p>
+                    </div>
+
+                    <div class="fact-card reveal-on-scroll">
+                        <div class="fact-icon">02</div>
+                        <h3 class="fact-title">8 недель один на один</h3>
+                        <p class="fact-text">Индивидуальная работа до момента, когда организм сам переключается на сброс жира.</p>
+                    </div>
+
+                    <div class="fact-card reveal-on-scroll">
+                        <div class="fact-icon">03</div>
+                        <h3 class="fact-title">Прозрачность и безопасность</h3>
+                        <p class="fact-text">Входной отбор до начала работы и 100% возврат средств, если метод вам не подходит.</p>
+                    </div>
+                </div>
+
+                <!-- Блок целевых действий (Кнопки) -->
+                <div class="hero-actions">
+                    <div class="action-item">
+                        <a href="#anketa" class="btn btn-primary" id="btn-anketa">
+                            <span>Заполнить анкету</span>
+                        </a>
+                        <p class="action-caption">
+                            Заполнение анкеты займёт 1 минуту. После этого — короткий 10-минутный разговор, чтобы понять, подходит ли вам этот метод.
+                        </p>
+                    </div>
+
+                    <div class="action-item">
+                        <a href="#community" class="btn btn-secondary" id="btn-community">
+                            <span>Телеграм-группа</span>
+                        </a>
+                        <p class="action-caption">
+                            Пространство взаимоподдержки без цензуры и стыда, плюс открытые разборы метода.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ссылка перехода вниз -->
+                <div class="hero-scroll-link">
+                    <a href="#why-fat" class="scroll-link">
+                        <span>Узнать, почему организм защищается жировыми клетками</span>
+                        <svg class="scroll-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- Block: About the Master -->
-        <section class="author reveal">
+        <!-- БЛОК 2: Почему прошлые методы провалились (Биологическая правда) -->
+        <section class="anatomy-section" id="why-fat">
             <div class="container">
-                <h2 class="section-title">Андрей Полиенко</h2>
-                <div class="author-wrapper">
-                    <div class="author-image">
-                        <picture>
-                            <source srcset="img/author.webp" type="image/webp">
-                            <img src="img/author.png" alt="Андрей Полиенко" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="author-info">
-                        <p class="author-subtitle">Специалист по техническому регулированию психики и работе с подсознанием.</p>
-                        <div class="author-content">
-                            <p>«Я не учу 'правильно жить' и не даю мотивационных советов. Моя работа — это поиск и устранение системных поломок в подсознании, которые мешают вам использовать свой ресурс на 100%. Мы убираем то, что тормозит, и восстанавливаем естественную работоспособность системы.»</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block 2: Normalization -->
-        <section class="normalization reveal">
-            <div class="container">
-                <h2 class="section-title">Это не личная проблема</h2>
-                <div class="normalization-content">
-                    <p>Есть состояние, которое появляется не внезапно, а постепенно.</p>
-                    <p>Снаружи жизнь может оставаться стабильной. Но внутри меняется восприятие всего, что раньше давало смысл и движение.</p>
-                    <ul>
-                        <li>Привычные цели перестают “заводить”.</li>
-                        <li>Энергия становится нестабильной.</li>
-                        <li>Появляется ощущение внутреннего напряжения без явной причины.</li>
-                        <li>Отдых перестаёт восстанавливать.</li>
-                    </ul>
-                    <p><strong>Это не поломка и не отклонение. Это переход психики на другой режим работы, где старые внутренние механизмы больше не дают прежнего эффекта.</strong></p>
-                    <p class="transition">И это состояние не возникает случайно — у него есть конкретная внутренняя причина.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Guarantee Badge -->
-        <section class="guarantee-section reveal">
-            <div class="container">
-                <div class="guarantee-card glowing-card">
-                    <span class="guarantee-icon">🛡️</span>
-                    <h3>Гипнотерапия онлайн: Гарантия результата или возврат денег</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block 3: Reason -->
-        <section class="reason reveal">
-            <div class="container">
-                <h2 class="section-title">Почему это начинается</h2>
-                <div class="reason-content">
-                    <p>Причина не в мотивации, не в целях и не в образе жизни.</p>
-                    <p>Внутри постепенно накапливается перегруз, который долго не осознаётся.</p>
-                    <p>Психика годами работает в режиме:</p>
-                    <ul>
-                        <li>Постоянной ответственности</li>
-                        <li>Контроля</li>
-                        <li>Внутреннего напряжения</li>
-                        <li>Подавления эмоций</li>
-                    </ul>
-                    <p>И в какой-то момент эта система перестаёт удерживать прежний баланс.</p>
-                    <p><strong>Снаружи ничего не ломается. Меняется внутренняя способность справляться с нагрузкой.</strong></p>
-                    <p class="transition">И самое важное — это не решается усилием воли или разговорами.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block: Technical Audit -->
-        <section class="audit reveal" id="audit">
-            <div class="container">
-                <p class="transition-intro">Давайте проверим, насколько ваша система близка к критическому сбою.</p>
-                <h2 class="section-title">ТЕХНИЧЕСКИЙ АУДИТ: КАРТА СКРЫТОГО ИЗНОСА</h2>
-                <p class="audit-intro">Ответьте «Да» или «Нет» на 5 вопросов, чтобы определить реальную нагрузку на несущие конструкции вашей психики.</p>
-                <div class="audit-quiz" id="audit-quiz">
-                    <div class="quiz-item" data-question="1">
-                        <div class="quiz-progress">Шаг 1 из 5</div>
-                        <p>1. <strong>Отказ мотивационных триггеров:</strong> То, что раньше обеспечивало ваш рост, давало азарт и энергию, сейчас воспринимается как фоновая рутина?</p>
-                        <div class="options">
-                            <button class="audit-btn" data-answer="yes">Да</button>
-                            <button class="audit-btn" data-answer="no">Нет</button>
-                        </div>
-                    </div>
-                    <div class="quiz-item" data-question="2" style="display: none;">
-                        <div class="quiz-progress">Шаг 2 из 5</div>
-                        <p>2. <strong>Истощение внутреннего ресурса:</strong> Внешние процессы (бизнес, семья) настроены нормально, но личная отдача и внутренний КПД на нуле?</p>
-                        <div class="options">
-                            <button class="audit-btn" data-answer="yes">Да</button>
-                            <button class="audit-btn" data-answer="no">Нет</button>
-                        </div>
-                    </div>
-                    <div class="quiz-item" data-question="3" style="display: none;">
-                        <div class="quiz-progress">Шаг 3 из 5</div>
-                        <p>3. <strong>Блокировка дофамина:</strong> Вы продолжаете принимать верные решения и закрывать цели, но это больше не приносит ощущения победы?</p>
-                        <div class="options">
-                            <button class="audit-btn" data-answer="yes">Да</button>
-                            <button class="audit-btn" data-answer="no">Нет</button>
-                        </div>
-                    </div>
-                    <div class="quiz-item" data-question="4" style="display: none;">
-                        <div class="quiz-progress">Шаг 4 из 5</div>
-                        <p>4. <strong>Режим удержания нагрузки:</strong> Ваш рабочий день превратился в бесконечное выдерживание давления и фиксацию конструкции, чтобы она не посыпалась?</p>
-                        <div class="options">
-                            <button class="audit-btn" data-answer="yes">Да</button>
-                            <button class="audit-btn" data-answer="no">Нет</button>
-                        </div>
-                    </div>
-                    <div class="quiz-item" data-question="5" style="display: none;">
-                        <div class="quiz-progress">Шаг 5 из 5</div>
-                        <p>5. <strong>Физический износ:</strong> Появились явные сбои в теле (поверхностный сон, скачки давления, ЖКТ, спина), которые приходится глушить таблетками и стимуляторами?</p>
-                        <div class="options">
-                            <button class="audit-btn" data-answer="yes">Да</button>
-                            <button class="audit-btn" data-answer="no">Нет</button>
-                        </div>
-                    </div>
-                </div>
                 
-                <div id="audit-result" class="audit-result" style="display: none;">
-                    <div id="result-critical" style="display: none;">
-                        <p class="result-text-critical"><strong>Ваша система работает на критическом пределе. Запишитесь на консультацию, чтобы не допустить полного сбоя.</strong></p>
-                    </div>
-                    <div id="result-normal" style="display: none;">
-                        <p class="result-text-normal">У вас практически всё в норме, критического износа нет. Но если хотите предотвратить возможные сбои в будущем — запишитесь на консультацию.</p>
-                    </div>
-                    <div class="result-action" style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-                        <a href="#consultation-form" class="btn btn-primary">Записаться на консультацию</a>
-                        <button id="retake-quiz-btn" class="btn-text" style="background: none; border: none; color: var(--text-muted); text-decoration: underline; cursor: pointer; font-size: 16px; transition: color 0.3s; font-family: var(--font-text);">Пройти аудит заново</button>
-                    </div>
+                <div class="section-badge">Биологическая правда</div>
+
+                <h2 class="section-title">
+                    Комплексный тупик: почему ни диеты, ни спортзал не убирают жировую ткань навсегда
+                </h2>
+
+                <div class="section-lead">
+                    <p>
+                        Вы уже прошли этот изматывающий круг: подсчет калорий, отказ от сладкого, тренировки до изнеможения, массажи и процедуры. Каждый раз результат один — колоссальные усилия, временный спад и неизбежный возврат жира обратно.
+                    </p>
+                    <p class="highlight-text">
+                        Дело не в слабой воле. И вы ни в чём не виноваты.
+                    </p>
                 </div>
-            </div>
-        </section>
-        <!-- Block 4: Ineffective Methods -->
-        <section class="ineffective reveal">
-            <div class="container">
-                <h2 class="section-title">Почему это не решается усилием</h2>
-                <div class="ineffective-content">
-                    <p>В этом состоянии большинство мужчин пробуют очевидные вещи:</p>
-                    <ul>
-                        <li>Взять себя в руки</li>
-                        <li>Отдохнуть</li>
-                        <li>Сменить фокус</li>
-                        <li>Поговорить с кем-то</li>
-                        <li>Найти новую цель</li>
-                    </ul>
-                    <p>Иногда это даёт краткий эффект. Но сама внутренняя основа не меняется.</p>
-                    <p><strong>Проблема не в действиях. Проблема в том, что причина находится глубже уровня сознательного контроля.</strong></p>
-                    <p class="transition">Поэтому внешние решения не удерживаются — состояние возвращается.</p>
-                </div>
-            </div>
-        </section>
-        <!-- Block 5: Solution (Hypnotherapy) -->
-        <section class="solution reveal">
-            <div class="container">
-                <h2 class="section-title">Работа, которая идёт глубже причин</h2>
-                <div class="solution-content">
-                    <p>Есть уровень, на котором формируются внутренние реакции, состояние и устойчивые сценарии поведения.</p>
-                    <p>Это не про советы и не про анализ.</p>
-                    <p>Это про автоматические внутренние механизмы, которые запускаются сами.</p>
-                    <p>Гипнотерапия позволяет работать именно с этим уровнем — с причиной, а не с последствиями.</p>
-                    <p><strong>Если убрать внутреннюю причину, состояние перестаёт поддерживаться автоматически.</strong></p>
-                    <p class="transition">Именно поэтому изменения здесь не требуют долгих лет работы.</p>
-                </div>
-            </div>
-        </section>
-        <!-- Block 6: Consultation Process -->
-        <section class="process reveal">
-            <div class="container">
-                <h2 class="section-title">Как проходит диагностическая консультация</h2>
-                <div class="process-content">
-                    <p>Это 1:1 онлайн-встреча (Zoom/Telegram, 40-60 минут). Это не общая беседа, а глубокий технический разбор вашей ситуации.</p>
-                    
-                    <div class="steps">
-                        <div class="step stagger-card">
-                            <h3>Шаг 1. Срез состояния</h3>
-                            <p>Разбираем, где именно ваша система дает сбой.</p>
+
+                <!-- 3 Карточки анатомии срывов (Вариант 3: Мощное масштабирование + Раскрытие инсайта) -->
+                <div class="anatomy-cards-grid">
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">01</div>
+                        <h3 class="anatomy-card-title">Жир как физический щит</h3>
+                        <p class="anatomy-card-text">
+                            Жировые клетки — это биологический панцирь, который организм выстроил для защиты от боли, хронического стресса, стыда или одиночества. Организм считает этот щит жизненно необходимым.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Пока мозг ощущает скрытую угрозу — он будет удерживать этот панцирь любой ценой, игнорируя любые диеты.</p>
                         </div>
-                        <div class="step stagger-card">
-                            <h3>Шаг 2. Поиск скрытой причины</h3>
-                            <p>Определяем, что поддерживает этот сбой на уровне подсознания.</p>
+                    </div>
+
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">02</div>
+                        <h3 class="anatomy-card-title">Почему ограничения вызывают срыв</h3>
+                        <p class="anatomy-card-text">
+                            Когда вы садитесь на диету или нагружаете себя в спортзале, подсознание воспринимает это как прямую атаку на свою безопасность. Организм включает тревогу, усиливает тягу к еде и с удвоенной силой начинает запасать жировую ткань при первой возможности.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Срыв — это не слабость воли, а аварийная система спасения: организм спасает свой главный защитный рубеж.</p>
                         </div>
-                        <div class="step stagger-card">
-                            <h3>Шаг 3. Фиксация цели</h3>
-                            <p>Формируем чёткий результат, который будет для вас означать выход из кризиса.</p>
-                        </div>
-                        <div class="step stagger-card">
-                            <h3>Шаг 4. План решения</h3>
-                            <p>Смотрим, подходит ли вам мой метод, и составляем алгоритм действий.</p>
+                    </div>
+
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">03</div>
+                        <h3 class="anatomy-card-title">Точка контроля находится внутри</h3>
+                        <p class="anatomy-card-text">
+                            Сражаться с телом силой бесполезно — биология всегда победит дисциплину. Пока не найдена и не устранена внутренняя причина, заставляющая организм защищаться, тело не отдаст ни одной жировой клетки.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Устранив причину тревоги в подсознании — мы снимаем необходимость защиты, и организм сам сбрасывает жировые клетки.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Финальный вывод блока (с тюнингом и цитатой) -->
+                <div class="takeaway-card">
+                    <p class="takeaway-text">
+                        «Когда все внешние физические инструменты исчерпаны, а жировые клетки остаются — становится очевидно: <span class="takeaway-highlight">воздействовать нужно не на следствие, а на внутреннюю причину</span>. Устранив её, мы даём организму сигнал, что защитный панцирь больше не нужен».
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <!-- Block: Mini-Cases -->
-        <section class="cases reveal">
+        <!-- БЛОК 3: Индивидуальная работа (Формат и этапы) -->
+        <section class="method-section" id="method">
             <div class="container">
-                <h2 class="section-title">Результаты работы</h2>
-                <div class="cases-grid">
-                    <div class="case-item stagger-card">
-                        <h3>Кейс 1: Выход из выгорания</h3>
-                        <p>Предприниматель, 38 лет. Состояние «ничего не хочу», потеря смысла в бизнесе. Результат: восстановление ресурса через 4 недели, запуск нового проекта, стабилизация сна без препаратов.</p>
-                    </div>
-                    <div class="case-item stagger-card">
-                        <h3>Кейс 2: Устранение фоновой тревоги</h3>
-                        <p>Руководитель, 42 года. Постоянное чувство давления и ожидания «беды». Результат: за 6 недель достигнуто состояние устойчивого спокойствия, ясность в принятии решений, отказ от алкоголя как способа расслабления.</p>
-                    </div>
-                    <div class="case-item stagger-card">
-                        <h3>Кейс 3: Прорыв «стеклянного потолка»</h3>
-                        <p>Владелец бизнеса, 40 лет. Стагнация в доходах и хроническое напряжение. После проработки подсознательных барьеров: кратный рост прибыли и выход из операционки без потери контроля.</p>
-                    </div>
-                    <div class="case-item stagger-card">
-                        <h3>Кейс 4: Эмоциональная устойчивость</h3>
-                        <p>Мужчина, 37 лет. Регулярные вспышки гнева, проблемы в семье из-за рабочего стресса. Результат: полный контроль над реакциями, восстановление отношений, внутренний баланс.</p>
-                    </div>
+
+                <div class="section-badge">Формат работы</div>
+
+                <h2 class="section-title">
+                    Как проходит личная работа: от поиска причины до снятия защиты
+                </h2>
+
+                <div class="section-lead">
+                    <p>
+                        В этой работе есть только два человека: <span class="highlight-text">я (Андрей Полиенко) и вы</span>.
+                    </p>
+                    <p>
+                        Работа проходит один на один, строго конфиденциально. Без посторонних глаз, без чувства вины и без необходимости кому-то что-то доказывать.
+                    </p>
                 </div>
-            </div>
-        </section>
-        <!-- Block 8: Trust / Filter -->
-        <section class="filter reveal">
-            <div class="container">
-                <h2 class="section-title">Кому это действительно подходит</h2>
-                <div class="filter-content">
-                    <p>Это работа не про “мотивацию” и не про временную поддержку.</p>
-                    <p>Она подходит, если:</p>
-                    <ul>
-                        <li>Есть ощущение внутреннего перегруза без явной причины</li>
-                        <li>Привычные способы “собраться” уже не дают эффекта</li>
-                        <li>Важно не просто обсудить состояние, а изменить его</li>
-                        <li>Есть готовность работать глубже, а не поверхностно</li>
-                    </ul>
-                    <p><strong>Важно:</strong> Это не универсальное решение для всех ситуаций. Если ожидание — просто “разговор и облегчение”, результат не будет устойчивым.</p>
-                    <p><strong>Эта работа имеет смысл только тогда, когда есть запрос на реальное изменение внутреннего состояния.</strong></p>
-                </div>
-            </div>
-        </section>
 
+                <!-- 3 Карточки этапов с медитативной 2-секундной анимацией -->
+                <div class="anatomy-cards-grid">
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">01</div>
+                        <h3 class="anatomy-card-title">Находим первопричину напряжения</h3>
+                        <p class="anatomy-card-text">
+                            Находим точную внутреннюю причину — событие, затяжной стресс или подавленную эмоцию, из-за которой тело включило режим удержания жира.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Организм перестаёт копить жир только тогда, когда устранена реальная причина тревоги.</p>
+                        </div>
+                    </div>
 
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">02</div>
+                        <h3 class="anatomy-card-title">Коррекция в изменённом состоянии сознания</h3>
+                        <p class="anatomy-card-text">
+                            Работаем с подсознанием в состоянии глубокого и комфортного расслабления. Вы полностью всё слышите, понимаете каждое слово и контролируете весь процесс. Мы снимаем внутреннее напряжение там, где оно зародилось.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Мозг получает сигнал безопасности, и необходимость удерживать жировой панцирь исчезает.</p>
+                        </div>
+                    </div>
 
-        <!-- Block 9: FAQ -->
-        <section class="faq reveal">
-            <div class="container">
-                <h2 class="section-title">Вопросы и ответы</h2>
-                <div class="faq-content">
-                    <div class="faq-item">
-                        <h3>1. Это точно можно изменить?</h3>
-                        <div class="faq-answer">
-                            <p>Да. Работа идёт не с “состоянием”, а с его причиной. Когда причина убирается — состояние перестаёт поддерживаться.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <h3>2. Это просто разговоры или что-то глубже?</h3>
-                        <div class="faq-answer">
-                            <p>Это работа с подсознательными механизмами, которые формируют внутренние реакции и устойчивые состояния.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <h3>3. Консультация к чему-то обязывает?</h3>
-                        <div class="faq-answer">
-                            <p>Нет. Это чисто диагностический этап. Мы разбираем вашу ситуацию, и если я вижу, что мой метод вам не подходит, я говорю об этом прямо. Никаких агрессивных продаж.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <h3>4. Что я должен делать в процессе?</h3>
-                        <div class="faq-answer">
-                            <p>Минимально участвовать и следовать процессу. Основная работа происходит на уровне внутренних реакций, а не усилий.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <h3>5. А если мне не подойдёт?</h3>
-                        <div class="faq-answer">
-                            <p>Для этого существует бесплатная консультация. На ней мы определяем, можно ли решить запрос в этом формате. Если нет — это выясняется до начала работы.</p>
+                    <div class="anatomy-card reveal-on-scroll">
+                        <div class="anatomy-step-num">03</div>
+                        <h3 class="anatomy-card-title">Завершение работы по факту результата</h3>
+                        <p class="anatomy-card-text">
+                            Тело прекращает защищаться и естественным путём начинает избавляться от накопленного жира без голода и ломки.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Как только результат достигнут и зафиксирован — процесс завершён.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Акцентная плашка сроков и гарантии (без кавычек) -->
+                <div class="takeaway-card reveal-on-scroll">
+                    <p class="takeaway-text">
+                        <span class="takeaway-highlight">Срок работы — строго ДО 8 недель.</span> Мы не растягиваем процесс искусственно: получили стабильный результат за 3 или 5 недель — работа окончена. Если в первые 14 дней вы решите, что формат вам не подходит — <span class="takeaway-highlight">100% возврат средств</span>.
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <!-- Block 7: Free Consultation / Form -->
-        <section class="consultation reveal" id="consultation-form">
+        <!-- БЛОК 4: Точки узнавания (В каких ситуациях организм включает защиту) -->
+        <section class="situations-section" id="situations">
             <div class="container">
-                <h2 class="section-title">С чего начинается работа</h2>
-                <div class="consultation-content">
-                    <p>Вход в работу — бесплатная консультация.</p>
-                    <p>Это не продажа и не общая беседа.</p>
-                    
-                    <p>На консультации мы:</p>
-                    <ul>
-                        <li>Разбираем текущее состояние</li>
-                        <li>Определяем, что именно его поддерживает</li>
-                        <li>Фиксируем, какой результат для тебя будет реальным изменением</li>
-                        <li>Смотрим, можно ли это состояние изменить в твоём случае</li>
-                    </ul>
-                    <p><strong>Заполните короткую анкету, чтобы записаться:</strong></p>
-                    
-                    <form class="lead-form" id="leadForm">
-                        <div class="form-group">
-                            <label class="question-label">Был ли у вас опыт работы с психологом?</label>
-                            <div class="radio-group">
-                                <label class="radio-pill"><input type="radio" name="psychologist" value="yes" required><span>Да</span></label>
-                                <label class="radio-pill"><input type="radio" name="psychologist" value="no"><span>Нет</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="question-label">Был ли опыт работы с гипнотерапевтом?</label>
-                            <div class="radio-group">
-                                <label class="radio-pill"><input type="radio" name="hypnotherapist" value="yes" required><span>Да</span></label>
-                                <label class="radio-pill"><input type="radio" name="hypnotherapist" value="no"><span>Нет</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="question-label">Есть ли у вас диагностированные психические заболевания?</label>
-                            <div class="radio-group">
-                                <label class="radio-pill"><input type="radio" name="mental_illness" value="yes" required><span>Да</span></label>
-                                <label class="radio-pill"><input type="radio" name="mental_illness" value="no"><span>Нет</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="question-label">Готовы ли вы к работе уже сегодня?</label>
-                            <div class="radio-group">
-                                <label class="radio-pill"><input type="radio" name="ready_today" value="yes" required><span>Да</span></label>
-                                <label class="radio-pill"><input type="radio" name="ready_today" value="no"><span>Нет</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="question-label" for="problem">Кратко опишите вашу проблему (1-2 предложения):</label>
-                            <textarea id="problem" name="problem" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="question-label" for="contact">Ваш контакт (Telegram или WhatsApp):</label>
-                             <input type="text" id="contact" name="contact" placeholder="@username" required>
-                        </div>
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="policy" required>
-                                <span>С <a href="privacy.html" target="_blank" style="color: var(--accent); text-decoration: underline;">политикой конфиденциальности</a> ознакомлен и согласен</span>
-                            </label>
-                        </div>
-                        <div class="form-feedback" id="formFeedback" style="display: none; margin-bottom: 24px; padding: 16px; border-radius: 8px; font-weight: 500; font-size: 16px; text-align: center;"></div>
-                        <div class="final-action">
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
-                        </div>
-                    </form>
+
+                <div class="section-badge">Точки узнавания</div>
+
+                <h2 class="section-title">
+                    В каких ситуациях организм включает жировую защиту
+                </h2>
+
+                <div class="section-lead">
+                    <p>
+                        Лишние килограммы не появляются случайно. В подавляющем большинстве случаев за ними стоит конкретная жизненная ситуация, в которой телу однажды стало небезопасно.
+                    </p>
                 </div>
+
+                <!-- 4 Карточки узнавания (Светлая палитра + медленное появление при скролле) -->
+                <div class="situations-grid">
+                    <div class="situation-card reveal-on-scroll">
+                        <div class="anatomy-step-num">01</div>
+                        <h3 class="anatomy-card-title">«Весь день держусь, а вечером опустошаю холодильник»</h3>
+                        <p class="anatomy-card-text">
+                            Днём — железный самоконтроль, работа и забота о семье на пределе сил. А вечером накатывает глухая усталость и фоновая тревога. Еда становится единственным доступным способом выдохнуть, почувствовать тепло и безопасность.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Еда выступает как самый быстрый природный регулятор стресса, спасающий психику от истощения.</p>
+                        </div>
+                    </div>
+
+                    <div class="situation-card reveal-on-scroll">
+                        <div class="anatomy-step-num">02</div>
+                        <h3 class="anatomy-card-title">«Вес замер после стресса или резких перемен»</h3>
+                        <p class="anatomy-card-text">
+                            После рождения ребёнка, тяжёлого разрыва в отношениях, кризиса в семье или выгорания на работе тело словно законсервировалось. Любые попытки ограничить питание вызывают панику организма, отёки и мгновенный возврат веса.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Организм зафиксировал режим повышенной опасности и удерживает запасы на случай нового кризиса.</p>
+                        </div>
+                    </div>
+
+                    <div class="situation-card reveal-on-scroll">
+                        <div class="anatomy-step-num">03</div>
+                        <h3 class="anatomy-card-title">«Тело как барьер от уязвимости и боли»</h3>
+                        <p class="anatomy-card-text">
+                            Глубинный страх оказаться слабой, беззащитной или снова столкнуться с предательством. Организм выстраивает физическую преграду, чтобы сделать вас «менее заметной» или «неприступной» для внешнего мира.
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Лишний вес бессознательно используется как броня, защищающая от болезненных контактов.</p>
+                        </div>
+                    </div>
+
+                    <div class="situation-card reveal-on-scroll">
+                        <div class="anatomy-step-num">04</div>
+                        <h3 class="anatomy-card-title">«Стыд, оверсайз и побег от зеркал»</h3>
+                        <p class="anatomy-card-text">
+                            Нежелание фотографироваться, просторная закрытая одежда как маскировка и ощущение, что настоящая жизнь на паузе — «вот когда похудею, тогда и начну радоваться, носить красивое и любить себя».
+                        </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Биологический смысл</span>
+                            <p class="insight-desc">Пока мозг ощущает внутренний конфликт и стыд, тело не видит причин расставаться с защитой.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Светлый выводной блок с посылом: узнали себя — обращайтесь -->
+                <div class="takeaway-card-light reveal-on-scroll">
+                    <p class="takeaway-text">
+                        Узнали себя хотя бы в одном из этих пунктов? <span class="takeaway-highlight">Ваше тело абсолютно нормально.</span> Оно защищает вас тем способом, который считает единственно надёжным. И моя задача — снять с него эту необходимость.
+                    </p>
+                    <div class="takeaway-action">
+                        <a href="#anketa" class="btn btn-primary" id="btn-situations-anketa">
+                            <span>Заполнить анкету на разбор ситуации</span>
+                        </a>
+                        <p class="action-caption" style="color: #64748B; margin: 0;">
+                            Короткая анкета на 1 минуту + 10-минутный разговор со мной, чтобы разобрать именно ваш случай.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-legal">
-                <p>&copy; 2026 Андрей Полиенко. Все права защищены.</p>
-                <div class="legal-links">
-                    <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
-    <button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">↑</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoWrapper = document.getElementById('authorPhoto');
+
+            // Умный наблюдатель за фотографией:
+            // При попадании в экран плавно наливается цветом (3.5 сек).
+            // При уходе из экрана возвращается в ч/б, чтобы процесс повторялся снова при скролле!
+            if (photoWrapper && 'IntersectionObserver' in window) {
+                const photoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                photoWrapper.classList.add('colorized');
+                            }, 350);
+                        } else {
+                            photoWrapper.classList.remove('colorized');
+                        }
+                    });
+                }, {
+                    threshold: 0.15
+                });
+
+                photoObserver.observe(photoWrapper);
+            }
+
+            // Плавное медленное появление карточек при скроллинге (каждый раз при скролле вверх и вниз):
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            if (revealElements.length && 'IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                        } else {
+                            entry.target.classList.remove('is-revealed');
+                        }
+                    });
+                }, {
+                    threshold: 0.08,
+                    rootMargin: '0px 0px -20px 0px'
+                });
+
+                revealElements.forEach(el => revealObserver.observe(el));
+            }
+        });
+    </script>
 </body>
 </html>
