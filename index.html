@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Андрей Полиенко — работа с первопричиной накопления жировых клеток. Устранение внутренней причины, чтобы организм сам избавился от жира.">
     <title>Андрей Полиенко | Работа с первопричиной накопления жировых клеток</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E07340'/%3E%3Cpath d='M9 23L16 8L23 23H19L16 16.5L13 23H9Z' fill='white'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -84,10 +85,11 @@
 
         /* Шапка */
         .site-header {
-            padding: 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid var(--border-subtle);
             background: rgba(11, 14, 18, 0.92);
             backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -97,6 +99,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 16px;
         }
 
         .brand {
@@ -110,6 +113,7 @@
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.2px;
+            font-size: 15px;
         }
 
         .brand-divider {
@@ -119,6 +123,29 @@
         .brand-desc {
             color: var(--text-muted);
             font-weight: 400;
+        }
+
+        .header-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 20px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(224, 115, 64, 0.3);
+            white-space: nowrap;
+        }
+
+        .header-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(224, 115, 64, 0.5);
+            filter: brightness(1.08);
         }
 
         /* Главный экран (Hero) */
@@ -1887,6 +1914,100 @@
             color: #334155;
         }
 
+        /* ==========================================================================
+           Подвал сайта (Footer)
+           ========================================================================== */
+        .site-footer {
+            background: #FFFFFF;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 48px 0 36px;
+            color: #475467;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-author-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #141821;
+            margin-bottom: 4px;
+        }
+
+        .footer-author-tagline {
+            font-size: 13.5px;
+            color: #64748B;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: #475467;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-tg-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #2AABEE;
+            font-weight: 600;
+        }
+
+        .footer-tg-link:hover {
+            color: #1F96D5;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding-top: 24px;
+            font-size: 12.5px;
+            color: #94A3B8;
+            flex-wrap: wrap;
+        }
+
+        .footer-disclaimer {
+            max-width: 520px;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top, .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+
         @media (max-width: 600px) {
             .cookie-banner { padding: 20px 18px; bottom: 12px; }
             .cookie-actions { flex-direction: column; }
@@ -1903,6 +2024,9 @@
                 <span class="brand-name">Андрей Полиенко</span>
                 <span class="brand-divider">•</span>
                 <span class="brand-desc">Работа с первопричиной накопления жировых клеток</span>
+            </div>
+            <div class="header-nav">
+                <a href="#application" class="header-cta-btn">Записаться</a>
             </div>
         </div>
     </header>
@@ -1928,7 +2052,7 @@
                                 Жир не откладывается просто так. У этого процесса всегда есть конкретная внутренняя причина. Я нахожу эту причину и устраняю её.
                             </p>
                             <p>
-                                Когда причина исчезает — организм сам принимает биологическое решение избавляться от жировых клеток. И вместе с жиром уходят стыд за своё тело, страх отвержения и чувство вины за еду — а также решаются и другие психологические проблемы, которые годами заставляли организм удерживать эту защиту.
+                                Когда причина исчезает — организм сам принимает естественное решение избавляться от жировых клеток. И вместе с жиром уходят стыд за своё тело, страх отвержения и чувство вины за еду — а также решаются и другие психологические проблемы, которые годами заставляли организм удерживать эту защиту.
                             </p>
                         </div>
                     </div>
@@ -1954,13 +2078,13 @@
                 <div class="hero-facts-grid">
                     <div class="fact-card reveal-on-scroll stagger-1">
                         <div class="fact-icon">01</div>
-                        <h3 class="fact-title">Биологическая честность</h3>
+                        <h3 class="fact-title">Естественный путь</h3>
                         <p class="fact-text">Без подсчета калорий, пищевых запретов и войны с собственным телом.</p>
                     </div>
 
                     <div class="fact-card reveal-on-scroll stagger-2">
                         <div class="fact-icon">02</div>
-                        <h3 class="fact-title">8 недель один на один</h3>
+                        <h3 class="fact-title">До 8 недель один на один</h3>
                         <p class="fact-text">Индивидуальная работа до момента, когда организм сам переключается на сброс жира.</p>
                     </div>
 
@@ -1974,7 +2098,7 @@
                 <!-- Блок целевых действий (Кнопки) -->
                 <div class="hero-actions">
                     <div class="action-item">
-                        <a href="#anketa" class="btn btn-primary" id="btn-anketa">
+                        <a href="#application" class="btn btn-primary" id="btn-anketa">
                             <span>Заполнить анкету</span>
                         </a>
                         <p class="action-caption">
@@ -1983,7 +2107,7 @@
                     </div>
 
                     <div class="action-item">
-                        <a href="#community" class="btn btn-secondary" id="btn-community">
+                        <a href="https://t.me/polienko" target="_blank" rel="noopener" class="btn btn-secondary" id="btn-community">
                             <span>Телеграм-группа</span>
                         </a>
                         <p class="action-caption">
@@ -2006,11 +2130,11 @@
             </div>
         </section>
 
-        <!-- БЛОК 2: Почему прошлые методы провалились (Биологическая правда) -->
+        <!-- БЛОК 2: Почему прошлые методы провалились (Анатомия тупика) -->
         <section class="anatomy-section" id="why-fat">
             <div class="container">
                 
-                <div class="section-badge">Биологическая правда</div>
+                <div class="section-badge">Анатомия тупика</div>
 
                 <h2 class="section-title">
                     Комплексный тупик: почему ни диеты, ни спортзал не убирают жировую ткань навсегда
@@ -2031,10 +2155,10 @@
                         <div class="anatomy-step-num">01</div>
                         <h3 class="anatomy-card-title">Жир как физический щит</h3>
                         <p class="anatomy-card-text">
-                            Жировые клетки — это биологический панцирь, который организм выстроил для защиты от боли, хронического стресса, стыда или одиночества. Организм считает этот щит жизненно необходимым.
+                            Жировые клетки — это защитный панцирь, который организм выстроил для защиты от боли, хронического стресса, стыда или одиночества. Организм считает этот щит жизненно необходимым.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Природный механизм</span>
                             <p class="insight-desc">Пока мозг ощущает скрытую угрозу — он будет удерживать этот панцирь любой ценой, игнорируя любые диеты.</p>
                         </div>
                     </div>
@@ -2046,7 +2170,7 @@
                             Когда вы садитесь на диету или нагружаете себя в спортзале, подсознание воспринимает это как прямую атаку на свою безопасность. Организм включает тревогу, усиливает тягу к еде и с удвоенной силой начинает запасать жировую ткань при первой возможности.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Реакция подсознания</span>
                             <p class="insight-desc">Срыв — это не слабость воли, а аварийная система спасения: организм спасает свой главный защитный рубеж.</p>
                         </div>
                     </div>
@@ -2058,7 +2182,7 @@
                             Сражаться с телом силой бесполезно — биология всегда победит дисциплину. Пока не найдена и не устранена внутренняя причина, заставляющая организм защищаться, тело не отдаст ни одной жировой клетки.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Точка решения</span>
                             <p class="insight-desc">Устранив причину тревоги в подсознании — мы снимаем необходимость защиты, и организм сам сбрасывает жировые клетки.</p>
                         </div>
                     </div>
@@ -2102,7 +2226,7 @@
                             Находим точную внутреннюю причину — событие, затяжной стресс или подавленную эмоцию, из-за которой тело включило режим удержания жира.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Суть шага</span>
                             <p class="insight-desc">Организм перестаёт копить жир только тогда, когда устранена реальная причина тревоги.</p>
                         </div>
                     </div>
@@ -2114,7 +2238,7 @@
                             Работаем с подсознанием в состоянии глубокого и комфортного расслабления. Вы полностью всё слышите, понимаете каждое слово и контролируете весь процесс. Мы снимаем внутреннее напряжение там, где оно зародилось.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Сигнал безопасности</span>
                             <p class="insight-desc">Мозг получает сигнал безопасности, и необходимость удерживать жировой панцирь исчезает.</p>
                         </div>
                     </div>
@@ -2126,7 +2250,7 @@
                             Тело прекращает защищаться и естественным путём начинает избавляться от накопленного жира без голода и ломки.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Результат работы</span>
                             <p class="insight-desc">Как только результат достигнут и зафиксирован — процесс завершён.</p>
                         </div>
                     </div>
@@ -2167,7 +2291,7 @@
                             Днём — железный самоконтроль, работа и забота о семье на пределе сил. А вечером накатывает глухая усталость и фоновая тревога. Еда становится единственным доступным способом выдохнуть, почувствовать тепло и безопасность.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Психологическая разгрузка</span>
                             <p class="insight-desc">Еда выступает как самый быстрый природный регулятор стресса, спасающий психику от истощения.</p>
                         </div>
                     </div>
@@ -2179,7 +2303,7 @@
                             После рождения ребёнка, тяжёлого разрыва в отношениях, кризиса в семье или выгорания на работе тело словно законсервировалось. Любые попытки ограничить питание вызывают панику организма, отёки и мгновенный возврат веса.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Режим консервации</span>
                             <p class="insight-desc">Организм зафиксировал режим повышенной опасности и удерживает запасы на случай нового кризиса.</p>
                         </div>
                     </div>
@@ -2191,7 +2315,7 @@
                             Глубинный страх оказаться слабой, беззащитной или снова столкнуться с предательством. Организм выстраивает физическую преграду, чтобы сделать вас «менее заметной» или «неприступной» для внешнего мира.
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Внутренняя броня</span>
                             <p class="insight-desc">Лишний вес бессознательно используется как броня, защищающая от болезненных контактов.</p>
                         </div>
                     </div>
@@ -2203,7 +2327,7 @@
                             Нежелание фотографироваться, просторная закрытая одежда как маскировка и ощущение, что настоящая жизнь на паузе — «вот когда похудею, тогда и начну радоваться, носить красивое и любить себя».
                         </p>
                         <div class="anatomy-insight">
-                            <span class="insight-tag">Биологический смысл</span>
+                            <span class="insight-tag">Сигнал опасности</span>
                             <p class="insight-desc">Пока мозг ощущает внутренний конфликт и стыд, тело не видит причин расставаться с защитой.</p>
                         </div>
                     </div>
@@ -2215,8 +2339,12 @@
                         Узнали себя хотя бы в одном из этих пунктов? <span class="takeaway-highlight">Ваше тело абсолютно нормально.</span> Оно защищает вас тем способом, который считает единственно надёжным. И моя задача — снять с него эту необходимость.
                     </p>
                     <div class="takeaway-action">
-                        <a href="#anketa" class="btn btn-primary" id="btn-situations-anketa">
-                            <span>Заполнить анкету на разбор ситуации</span>
+                        <a href="#application" class="scroll-link" style="color: var(--accent); font-weight: 700; font-size: 16px;">
+                            <span>Перейти к анкете и разобрать свой случай</span>
+                            <svg class="scroll-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                         <p class="action-caption" style="color: #64748B; margin: 0;">
                             Короткая анкета на 1 минуту + 10-минутный разговор со мной, чтобы разобрать именно ваш случай.
@@ -2280,7 +2408,7 @@
                             <p><strong>Что делать:</strong> Сначала нужно снять сигнал тревоги в подсознании — и только тогда организм сам спокойно отпустит жировую ткань.</p>
                         </div>
                         <div class="quiz-result-actions">
-                            <a href="#anketa" class="btn btn-primary">
+                            <a href="#application" class="btn btn-primary">
                                 <span>Заполнить анкету на разбор ситуации</span>
                             </a>
                             <button type="button" class="quiz-reset-btn" id="quizResetBtn">
@@ -2331,7 +2459,7 @@
                         <div class="anatomy-step-num">03</div>
                         <h3 class="manifesto-card-title">Честность и фокус на результате (срок ДО 8 недель)</h3>
                         <p class="manifesto-card-text">
-                            Я не растягиваю консультации на месяцы ради процесса. Мы работаем динамически: как только подсознание сбросило аварийный режим и результат зафиксирован — работа окончена. Если метод вам не подходит — действует 100% гарантия возврата в первые 14 дней.
+                            Я не растягиваю консультации на месяцы ради процесса. Мы работаем динамически: как только подсознание сбросило аварийный режим и результат зафиксирован — работа окончена. Тело само перестаёт держаться за жировой панцирь, и вы возвращаетесь к лёгкости без страха отката.
                         </p>
                     </div>
                 </div>
@@ -2345,152 +2473,8 @@
 
             </div>
         </section>
-    </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const photoWrapper = document.getElementById('authorPhoto');
-
-            // Умный наблюдатель за фотографией:
-            // При попадании в экран плавно наливается цветом (3.5 сек).
-            // При уходе из экрана возвращается в ч/б, чтобы процесс повторялся снова при скролле!
-            if (photoWrapper && 'IntersectionObserver' in window) {
-                const photoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                photoWrapper.classList.add('colorized');
-                            }, 350);
-                        } else {
-                            photoWrapper.classList.remove('colorized');
-                        }
-                    });
-                }, {
-                    threshold: 0.15
-                });
-
-                photoObserver.observe(photoWrapper);
-            }
-
-            // Плавное медленное появление карточек при скроллинге (каждый раз при скролле вверх и вниз):
-            const revealElements = document.querySelectorAll('.reveal-on-scroll');
-            if (revealElements.length && 'IntersectionObserver' in window) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-revealed');
-                        } else {
-                            entry.target.classList.remove('is-revealed');
-                        }
-                    });
-                }, {
-                    threshold: 0.08,
-                    rootMargin: '0px 0px -20px 0px'
-                });
-
-                revealElements.forEach(el => revealObserver.observe(el));
-            }
-
-            // Интерактивный экспресс-тест (5 вопросов Да/Нет)
-            const quizData = [
-                {
-                    cat: "Реакция на стресс",
-                    text: "Замечаете ли вы, что вес замирает или начинает расти именно в периоды затяжного напряжения, проблем в семье или перегрузок на работе?"
-                },
-                {
-                    cat: "Вечерний сброс контроля",
-                    text: "Бывает ли так, что днём вы держите строгий самоконтроль, а вечером еда становится единственным доступным способом выдохнуть и почувствовать покой?"
-                },
-                {
-                    cat: "Эффект маятника",
-                    text: "Случалось ли, что после жестких диет или спортзала вес сначала падал, а затем организм с удвоенной силой возвращал всё сброшенное плюс пару килограммов сверху?"
-                },
-                {
-                    cat: "Фоновая тревога",
-                    text: "Ловите ли вы себя на ощущении, что не можете расслабиться, постоянно всё контролируете и испытываете фоновое чувство вины перед собой за тело или еду?"
-                },
-                {
-                    cat: "Функция щита",
-                    text: "Есть ли ощущение, что лишний вес на самом деле спасает вас от лишнего внимания, делает «невидимой» или закрывает от уязвимости и новой боли?"
-                }
-            ];
-
-            let currentQuizIndex = 0;
-            let yesAnswersCount = 0;
-
-            const qBox = document.getElementById('quizQuestionBox');
-            const rBox = document.getElementById('quizResultBox');
-            const stepBadge = document.getElementById('quizStepBadge');
-            const progressFill = document.getElementById('quizProgressFill');
-            const catEl = document.getElementById('quizQuestionCategory');
-            const textEl = document.getElementById('quizQuestionText');
-            const btnYes = document.getElementById('quizBtnYes');
-            const btnNo = document.getElementById('quizBtnNo');
-            const resetBtn = document.getElementById('quizResetBtn');
-            const resultBody = document.getElementById('quizResultBody');
-
-            function showQuestion(index) {
-                if (!textEl) return;
-                qBox.style.opacity = '0';
-                qBox.style.transform = 'translateY(10px)';
-                
-                setTimeout(() => {
-                    const item = quizData[index];
-                    if (stepBadge) stepBadge.textContent = `Вопрос ${index + 1} из ${quizData.length}`;
-                    if (progressFill) progressFill.style.width = `${((index + 1) / quizData.length) * 100}%`;
-                    if (catEl) catEl.textContent = item.cat;
-                    if (textEl) textEl.textContent = item.text;
-                    
-                    qBox.style.opacity = '1';
-                    qBox.style.transform = 'translateY(0)';
-                }, 180);
-            }
-
-            function handleAnswer(isYes) {
-                if (isYes) yesAnswersCount++;
-                currentQuizIndex++;
-
-                if (currentQuizIndex < quizData.length) {
-                    showQuestion(currentQuizIndex);
-                } else {
-                    showResults();
-                }
-            }
-
-            function showResults() {
-                if (qBox) qBox.style.display = 'none';
-                if (rBox) rBox.style.display = 'block';
-
-                if (resultBody) {
-                    if (yesAnswersCount >= 3) {
-                        resultBody.innerHTML = `
-                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> ключевых маркеров аварийного режима.</p>
-                            <p>Ваше подсознание расценивает жировые клетки не как лишний вес, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спорт воспринимаются телом как угроза и вызывают только новые срывы.</p>
-                            <p><strong>Решение:</strong> Снять внутренний аварийный сигнал в подсознании — и тогда организм сам перестанет удерживать жировую ткань.</p>
-                        `;
-                    } else {
-                        resultBody.innerHTML = `
-                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> маркеров.</p>
-                            <p>У вас умеренная защитная реакция. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный триггер удержания, который мешает телу сбросить лишнее.</p>
-                            <p><strong>Решение:</strong> Найти точную причину застоя на коротком индивидуальном разборе.</p>
-                        `;
-                    }
-                }
-            }
-
-            if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true));
-            if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false));
-            if (resetBtn) resetBtn.addEventListener('click', () => {
-                currentQuizIndex = 0;
-                yesAnswersCount = 0;
-                if (rBox) rBox.style.display = 'none';
-                if (qBox) qBox.style.display = 'block';
-                showQuestion(0);
-            });
-        });
-    </script>
-
-    <!-- БЛОК 7: FAQ — Скрытые страхи и возражения -->
+        <!-- БЛОК 7: FAQ — Скрытые страхи и возражения -->
     <section class="faq-section" id="faq">
         <div class="container">
 
@@ -2719,27 +2703,8 @@
         </div>
     </section>
 
-    <script>
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.faq-item');
-                const isOpen = item.classList.contains('open');
-                // Close all
-                document.querySelectorAll('.faq-item.open').forEach(el => {
-                    el.classList.remove('open');
-                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                // Open clicked if it was closed
-                if (!isOpen) {
-                    item.classList.add('open');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-    </script>
-
     <!-- БЛОК 8: Финальный CTA + Форма заявки -->
+    <div id="anketa"></div>
     <section class="cta-section" id="application">
         <div class="container">
 
@@ -2840,6 +2805,34 @@
 
         </div>
     </section>
+    </main>
+
+    <!-- Подвал сайта (Footer) -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-author-name">Андрей Полиенко</div>
+                    <div class="footer-author-tagline">Индивидуальная работа с первопричиной накопления жировых клеток</div>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">В начало</a>
+                    <a href="#why-fat" class="footer-link">Причины</a>
+                    <a href="#method" class="footer-link">Формат</a>
+                    <a href="#quiz" class="footer-link">Тест</a>
+                    <a href="#faq" class="footer-link">Вопросы</a>
+                    <a href="https://t.me/polienko" target="_blank" rel="noopener" class="footer-link footer-tg-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-16.6 6.593C2.4 9.7 2.4 10.75 3.6 11.145l4.065 1.272 1.573 4.9c.21.65 1.02.9 1.573.455l2.263-1.9 4.405 3.228c.81.595 1.96.21 2.165-.762L21.945 4.1c.3-1.395-.69-2.015-1.747-1.667zM8.75 13.775l-.58 3.14-1.14-3.56 9.9-6.14-8.18 6.56z" fill="currentColor"/></svg>
+                        Telegram
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Андрей Полиенко. Все права защищены.</div>
+                <div class="footer-disclaimer">Информация на сайте не является медицинской услугой и не заменяет обращение к профильному врачу.</div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Cookie-баннер -->
     <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Использование файлов cookie">
@@ -2857,97 +2850,249 @@
         </div>
     </div>
 
+    <!-- Единый оптимизированный скрипт сайта -->
     <script>
-        // Блок 8 — Yes/No кнопки
-        document.querySelectorAll('.cta-yn-buttons').forEach(group => {
-            group.querySelectorAll('.cta-yn-btn').forEach(btn => {
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Умный наблюдатель за фотографией автора (проявление цвета)
+            const photoWrapper = document.getElementById('authorPhoto');
+            if (photoWrapper && 'IntersectionObserver' in window) {
+                const photoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                photoWrapper.classList.add('colorized');
+                            }, 350);
+                        } else {
+                            photoWrapper.classList.remove('colorized');
+                        }
+                    });
+                }, { threshold: 0.15 });
+                photoObserver.observe(photoWrapper);
+            }
+
+            // 2. Медленное появление карточек при скролле
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            if (revealElements.length && 'IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                        } else {
+                            entry.target.classList.remove('is-revealed');
+                        }
+                    });
+                }, {
+                    threshold: 0.08,
+                    rootMargin: '0px 0px -20px 0px'
+                });
+                revealElements.forEach(el => revealObserver.observe(el));
+            }
+
+            // 3. Интерактивный экспресс-тест (5 вопросов Да/Нет)
+            const quizData = [
+                {
+                    cat: "Реакция на стресс",
+                    text: "Замечаете ли вы, что вес замирает или начинает расти именно в периоды затяжного напряжения, проблем в семье или перегрузок на работе?"
+                },
+                {
+                    cat: "Вечерний сброс контроля",
+                    text: "Бывает ли так, что днём вы держите строгий самоконтроль, а вечером еда становится единственным доступным способом выдохнуть и почувствовать покой?"
+                },
+                {
+                    cat: "Эффект маятника",
+                    text: "Случалось ли, что после жестких диет или спортзала вес сначала падал, а затем организм с удвоенной силой возвращал всё сброшенное плюс пару килограммов сверху?"
+                },
+                {
+                    cat: "Фоновая тревога",
+                    text: "Ловите ли вы себя на ощущении, что не можете расслабиться, постоянно всё контролируете и испытываете фоновое чувство вины перед собой за тело или еду?"
+                },
+                {
+                    cat: "Функция щита",
+                    text: "Есть ли ощущение, что лишний вес на самом деле спасает вас от лишнего внимания, делает «невидимой» или закрывает от уязвимости и новой боли?"
+                }
+            ];
+
+            let currentQuizIndex = 0;
+            let yesAnswersCount = 0;
+
+            const qBox = document.getElementById('quizQuestionBox');
+            const rBox = document.getElementById('quizResultBox');
+            const stepBadge = document.getElementById('quizStepBadge');
+            const progressFill = document.getElementById('quizProgressFill');
+            const catEl = document.getElementById('quizQuestionCategory');
+            const textEl = document.getElementById('quizQuestionText');
+            const btnYes = document.getElementById('quizBtnYes');
+            const btnNo = document.getElementById('quizBtnNo');
+            const resetBtn = document.getElementById('quizResetBtn');
+            const resultBody = document.getElementById('quizResultBody');
+
+            function showQuestion(index) {
+                if (!textEl) return;
+                qBox.style.opacity = '0';
+                qBox.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    const item = quizData[index];
+                    if (stepBadge) stepBadge.textContent = `Вопрос ${index + 1} из ${quizData.length}`;
+                    if (progressFill) progressFill.style.width = `${((index + 1) / quizData.length) * 100}%`;
+                    if (catEl) catEl.textContent = item.cat;
+                    if (textEl) textEl.textContent = item.text;
+                    
+                    qBox.style.opacity = '1';
+                    qBox.style.transform = 'translateY(0)';
+                }, 180);
+            }
+
+            function handleAnswer(isYes) {
+                if (isYes) yesAnswersCount++;
+                currentQuizIndex++;
+
+                if (currentQuizIndex < quizData.length) {
+                    showQuestion(currentQuizIndex);
+                } else {
+                    showResults();
+                }
+            }
+
+            function showResults() {
+                if (qBox) qBox.style.display = 'none';
+                if (rBox) rBox.style.display = 'block';
+
+                if (resultBody) {
+                    if (yesAnswersCount >= 3) {
+                        resultBody.innerHTML = `
+                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> ключевых маркеров защитного режима.</p>
+                            <p>Ваше подсознание расценивает жировые клетки не как лишний вес, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спорт воспринимаются телом как угроза и вызывают только новые срывы.</p>
+                            <p><strong>Решение:</strong> Снять внутренний аварийный сигнал в подсознании — и тогда организм сам перестанет удерживать жировую ткань.</p>
+                        `;
+                    } else {
+                        resultBody.innerHTML = `
+                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> маркеров.</p>
+                            <p>У вас умеренная защитная реакция. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный триггер удержания, который мешает телу сбросить лишнее.</p>
+                            <p><strong>Решение:</strong> Найти точную причину застоя на коротком индивидуальном разборе.</p>
+                        `;
+                    }
+                }
+            }
+
+            if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true));
+            if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false));
+            if (resetBtn) resetBtn.addEventListener('click', () => {
+                currentQuizIndex = 0;
+                yesAnswersCount = 0;
+                if (rBox) rBox.style.display = 'none';
+                if (qBox) qBox.style.display = 'block';
+                showQuestion(0);
+            });
+
+            // 4. Аккордеон FAQ
+            document.querySelectorAll('.faq-question').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    group.querySelectorAll('.cta-yn-btn').forEach(b => b.classList.remove('selected'));
-                    btn.classList.add('selected');
+                    const item = btn.closest('.faq-item');
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item.open').forEach(el => {
+                        el.classList.remove('open');
+                        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
                 });
             });
-        });
 
-        // Блок 8 — Отправка формы
-        document.getElementById('ctaSubmitBtn').addEventListener('click', () => {
-            const telegram = document.getElementById('ctaTelegram').value.trim();
-            const situation = document.getElementById('ctaSituation').value.trim();
-
-            if (!telegram) {
-                document.getElementById('ctaTelegram').focus();
-                document.getElementById('ctaTelegram').style.borderColor = '#E07340';
-                return;
-            }
-
-            // Собираем ответы
-            const answers = {};
+            // 5. Кнопки Да/Нет в финальной анкете
             document.querySelectorAll('.cta-yn-buttons').forEach(group => {
-                const field = group.dataset.field;
-                const selected = group.querySelector('.cta-yn-btn.selected');
-                answers[field] = selected ? selected.dataset.val : 'не ответила';
+                group.querySelectorAll('.cta-yn-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        group.querySelectorAll('.cta-yn-btn').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                });
             });
 
-            // Формируем сообщение для Telegram
-            const labels = {
-                q1: 'Работала с психологом/специалистом',
-                q2: 'Знакома с работой с подсознанием',
-                q3: 'Готова начать в ближайшие дни',
-                q4: 'Готовность работать с причинами и эмоциями',
-                q5: 'Личная включённость на сессиях'
-            };
-            const valMap = { yes: 'Да', no: 'Нет', 'не ответила': '—' };
-            let msg = '📋 Новая заявка с сайта\n\n';
-            for (const [k, v] of Object.entries(answers)) {
-                msg += `• ${labels[k]}: ${valMap[v] || v}\n`;
+            // 6. Отправка формы заявки
+            const submitBtn = document.getElementById('ctaSubmitBtn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', () => {
+                    const telegram = document.getElementById('ctaTelegram').value.trim();
+                    const situation = document.getElementById('ctaSituation').value.trim();
+
+                    if (!telegram) {
+                        document.getElementById('ctaTelegram').focus();
+                        document.getElementById('ctaTelegram').style.borderColor = '#E07340';
+                        return;
+                    }
+
+                    const answers = {};
+                    document.querySelectorAll('.cta-yn-buttons').forEach(group => {
+                        const field = group.dataset.field;
+                        const selected = group.querySelector('.cta-yn-btn.selected');
+                        answers[field] = selected ? selected.dataset.val : 'не ответила';
+                    });
+
+                    const labels = {
+                        q1: 'Работала с психологом/специалистом',
+                        q2: 'Знакома с работой с подсознанием',
+                        q3: 'Готова начать в ближайшие дни',
+                        q4: 'Готовность работать с причинами и эмоциями',
+                        q5: 'Личная включённость на сессиях'
+                    };
+                    const valMap = { yes: 'Да', no: 'Нет', 'не ответила': '—' };
+                    let msg = '📋 Новая заявка с сайта\n\n';
+                    for (const [k, v] of Object.entries(answers)) {
+                        msg += `• ${labels[k]}: ${valMap[v] || v}\n`;
+                    }
+                    msg += `\n📝 Ситуация: ${situation || '—'}`;
+                    msg += `\n📱 Telegram: ${telegram}`;
+
+                    fetch('/send', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: msg })
+                    })
+                    .then(r => r.ok ? r.json() : Promise.reject(r))
+                    .then(() => {
+                        document.getElementById('ctaFormInner').style.display = 'none';
+                        document.getElementById('ctaSuccess').style.display = 'block';
+                    })
+                    .catch(() => {
+                        document.getElementById('ctaFormInner').style.display = 'none';
+                        document.getElementById('ctaSuccess').style.display = 'block';
+                    });
+                });
             }
-            msg += `\n📝 Ситуация: ${situation || '—'}`;
-            msg += `\n📱 Telegram: ${telegram}`;
-
-            // Отправляем на сервер
-            fetch('/send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: msg })
-            })
-            .then(r => r.ok ? r.json() : Promise.reject(r))
-            .then(() => {
-                document.getElementById('ctaFormInner').style.display = 'none';
-                document.getElementById('ctaSuccess').style.display = 'block';
-            })
-            .catch(() => {
-                // Показываем успех даже если сервер не ответил (dev режим)
-                document.getElementById('ctaFormInner').style.display = 'none';
-                document.getElementById('ctaSuccess').style.display = 'block';
-            });
         });
 
-        // Cookie-баннер
+        // 7. Cookie-баннер
         (function() {
             const banner = document.getElementById('cookieBanner');
             const acceptBtn = document.getElementById('cookieAccept');
             const declineBtn = document.getElementById('cookieDecline');
             const checkbox = document.getElementById('cookieCheckbox');
 
-            // Если уже решено — не показываем
-            if (localStorage.getItem('cookieConsent')) return;
+            if (!banner || localStorage.getItem('cookieConsent')) return;
 
-            // Показываем с небольшой задержкой
             setTimeout(() => { banner.classList.add('visible'); }, 1200);
 
-            acceptBtn.addEventListener('click', () => {
-                if (!checkbox.checked) {
-                    checkbox.focus();
-                    checkbox.style.outline = '2px solid var(--accent)';
-                    return;
-                }
-                localStorage.setItem('cookieConsent', 'accepted');
-                hideBanner();
-            });
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    if (!checkbox.checked) {
+                        checkbox.focus();
+                        checkbox.style.outline = '2px solid var(--accent)';
+                        return;
+                    }
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    hideBanner();
+                });
+            }
 
-            declineBtn.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'declined');
-                hideBanner();
-            });
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    hideBanner();
+                });
+            }
 
             function hideBanner() {
                 banner.style.transform = 'translateX(-50%) translateY(140px)';
