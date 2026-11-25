@@ -179,14 +179,18 @@
             border-radius: 18px;
             padding: 16px;
             box-shadow: var(--shadow-card);
-            transition: var(--transition-smooth);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .author-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(224, 115, 64, 0.6);
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), 0 0 45px rgba(224, 115, 64, 0.35);
+            z-index: 30;
         }
 
         .author-photo-wrapper {
@@ -205,7 +209,7 @@
             object-fit: cover;
             object-position: center top;
             filter: grayscale(100%);
-            transition: filter 3.5s ease-in-out, transform 0.8s ease;
+            transition: filter 3.5s ease-in-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: filter, transform;
         }
 
@@ -213,7 +217,7 @@
         .author-card:hover .author-photo-wrapper img,
         .author-photo-wrapper.colorized img {
             filter: grayscale(0%);
-            transform: scale(1.02);
+            transform: scale(1.06);
         }
 
         .author-card-info {
@@ -236,7 +240,7 @@
             font-weight: 600;
         }
 
-        /* 3 Карточки опорных фактов (Вариант 1: Всплывающий фокус 1.36x над соседями) */
+        /* 3 Карточки опорных фактов: благородное увеличение с кристально чётким текстом */
         .hero-facts-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -252,33 +256,34 @@
             border-radius: 16px;
             padding: 30px 24px;
             box-shadow: var(--shadow-card);
-            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 1.5s ease, 
-                        background 1.5s ease,
-                        opacity 1.2s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
             will-change: transform, box-shadow;
             transform-origin: center center;
             position: relative;
             z-index: 1;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* При наведении: карточка плавно всплывает в 1.36 раза с сочным ярким янтарным свечением */
+        /* При наведении: карточка плавно и солидно раскрывается, акцентируя внимание */
         .fact-card:hover {
-            transform: translateY(-14px) scale(1.36);
+            transform: translateY(-10px) scale(1.10);
             z-index: 40;
             border-color: #FFA56E;
             background: linear-gradient(150deg, #242C3B 0%, #171D27 100%);
-            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9), 
-                        0 0 55px rgba(224, 115, 64, 0.75), 
-                        inset 0 0 24px rgba(224, 115, 64, 0.25);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), 
+                        0 0 45px rgba(224, 115, 64, 0.55), 
+                        inset 0 0 20px rgba(224, 115, 64, 0.2);
         }
 
-        /* Эффект прожектора: соседние карточки в первом блоке мягко затеняются */
+        /* Эффект прожектора: соседние карточки мягко отступают на второй план */
         .hero-facts-grid:hover .fact-card:not(:hover) {
-            opacity: 0.55;
-            transform: scale(0.96);
+            opacity: 0.72;
+            transform: scale(0.98);
         }
 
         .fact-icon {
@@ -535,11 +540,11 @@
             border-radius: 18px;
             padding: 32px 26px;
             box-shadow: var(--shadow-card);
-            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 1.5s ease, 
-                        background 1.5s ease,
-                        opacity 1.2s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
             will-change: transform, box-shadow;
             transform-origin: center center;
             display: flex;
@@ -547,21 +552,22 @@
             position: relative;
             z-index: 1;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* При наведении: карточка плавно всплывает в 1.22 раза, зажигая светящийся контур */
+        /* При наведении: карточка плавно и уверенно раскрывается, сохраняя безупречную читаемость */
         .anatomy-card:hover {
-            transform: translateY(-12px) scale(1.22);
+            transform: translateY(-10px) scale(1.10);
             z-index: 30;
             border-color: #FFA56E;
             background: linear-gradient(150deg, #222938 0%, #161B25 100%);
-            box-shadow: 0 28px 65px rgba(0, 0, 0, 0.85), 0 0 45px rgba(224, 115, 64, 0.55);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), 0 0 45px rgba(224, 115, 64, 0.55);
         }
 
         /* Эффект прожектора: соседние неактивные карточки мягко приглушаются */
         .anatomy-cards-grid:hover .anatomy-card:not(:hover) {
-            opacity: 0.55;
-            transform: scale(0.96);
+            opacity: 0.72;
+            transform: scale(0.98);
         }
 
         .anatomy-step-num {
@@ -976,27 +982,28 @@
             border-radius: 20px;
             padding: 34px 28px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 1.5s ease, 
-                        background 1.5s ease,
-                        opacity 1.2s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
             will-change: transform, box-shadow;
             display: flex;
             flex-direction: column;
             position: relative;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
         .manifesto-card:hover {
-            transform: translateY(-8px) scale(1.03);
+            transform: translateY(-8px) scale(1.06);
             border-color: #E07340;
-            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(224, 115, 64, 0.22);
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12), 0 0 32px rgba(224, 115, 64, 0.22);
             z-index: 20;
         }
 
         .manifesto-cards-grid:hover .manifesto-card:not(:hover) {
-            opacity: 0.65;
+            opacity: 0.72;
             transform: scale(0.98);
         }
 
@@ -1053,27 +1060,28 @@
             border-radius: 20px;
             padding: 34px 28px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 1.5s ease, 
-                        background 1.5s ease,
-                        opacity 1.2s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
             will-change: transform, box-shadow;
             display: flex;
             flex-direction: column;
             position: relative;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
         .situation-card:hover {
-            transform: translateY(-8px) scale(1.03);
+            transform: translateY(-8px) scale(1.06);
             border-color: #E07340;
-            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(224, 115, 64, 0.22);
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12), 0 0 32px rgba(224, 115, 64, 0.22);
             z-index: 20;
         }
 
         .situations-grid:hover .situation-card:not(:hover) {
-            opacity: 0.65;
+            opacity: 0.72;
             transform: scale(0.98);
         }
 
@@ -1665,22 +1673,50 @@
             flex: 1;
             min-width: 220px;
             padding: 18px 32px;
-            background: var(--accent);
+            background: var(--accent-gradient);
             color: #FFFFFF;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
             font-family: inherit;
-            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-button);
+            user-select: none;
+        }
+
+        /* Бегущий блик под углом для финальной кнопки */
+        .btn-cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shineLight 4s infinite ease-in-out;
+            pointer-events: none;
         }
 
         .btn-cta-primary:hover {
-            background: #C85F2D;
-            box-shadow: 0 8px 28px rgba(224,115,64,0.4);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+            filter: brightness(1.08);
+        }
+
+        .btn-cta-primary:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 4px 14px rgba(224, 115, 64, 0.4);
         }
 
         .btn-cta-soft {
@@ -2749,8 +2785,17 @@
 
                     <!-- Q4 -->
                     <div class="cta-yn-group">
-                        <span class="cta-yn-label">Вы понимаете, что это индивидуальная работа — не курс, не марафон, не группа?</span>
+                        <span class="cta-yn-label">Вы готовы работать с внутренними причинами и эмоциями, а не ждать очередных запретов в еде?</span>
                         <div class="cta-yn-buttons" data-field="q4">
+                            <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
+                            <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="cta-yn-group">
+                        <span class="cta-yn-label">Вы понимаете, что устойчивый результат потребует вашей искренней включённости на сессиях?</span>
+                        <div class="cta-yn-buttons" data-field="q5">
                             <button type="button" class="cta-yn-btn" data-val="yes">Да</button>
                             <button type="button" class="cta-yn-btn" data-val="no">Нет</button>
                         </div>
@@ -2847,7 +2892,8 @@
                 q1: 'Работала с психологом/специалистом',
                 q2: 'Знакома с работой с подсознанием',
                 q3: 'Готова начать в ближайшие дни',
-                q4: 'Понимает формат (индивид. работа)'
+                q4: 'Готовность работать с причинами и эмоциями',
+                q5: 'Личная включённость на сессиях'
             };
             const valMap = { yes: 'Да', no: 'Нет', 'не ответила': '—' };
             let msg = '📋 Новая заявка с сайта\n\n';
