@@ -2107,7 +2107,7 @@
                     </div>
 
                     <div class="action-item">
-                        <a href="https://t.me/polienko" target="_blank" rel="noopener" class="btn btn-secondary" id="btn-community">
+                        <a href="https://t.me/abgreit_tela" target="_blank" rel="noopener" class="btn btn-secondary" id="btn-community">
                             <span>Телеграм-группа</span>
                         </a>
                         <p class="action-caption">
@@ -2783,7 +2783,7 @@
                     <!-- Кнопки -->
                     <div class="cta-actions">
                         <button type="button" class="btn-cta-primary" id="ctaSubmitBtn">Отправить заявку</button>
-                        <a href="https://t.me/polienko" target="_blank" rel="noopener" class="btn-cta-soft">
+                        <a href="https://t.me/abgreit_tela" target="_blank" rel="noopener" class="btn-cta-soft">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-16.6 6.593C2.4 9.7 2.4 10.75 3.6 11.145l4.065 1.272 1.573 4.9c.21.65 1.02.9 1.573.455l2.263-1.9 4.405 3.228c.81.595 1.96.21 2.165-.762L21.945 4.1c.3-1.395-.69-2.015-1.747-1.667zM8.75 13.775l-.58 3.14-1.14-3.56 9.9-6.14-8.18 6.56z" fill="#2AABEE"/></svg>
                             Присоединиться к Telegram-группе
                         </a>
@@ -2798,7 +2798,7 @@
                     <div class="cta-success-title">Заявка отправлена</div>
                     <p class="cta-success-text">
                         Я прочитаю её сегодня и напишу вам в Telegram.<br>
-                        Если не получили ответ в течение дня — напишите мне сами: <a href="https://t.me/polienko" style="color:var(--accent);">@polienko</a>
+                        Если не получили ответ в течение дня — напишите мне сами: <a href="https://t.me/ANDPOLIENKO" target="_blank" rel="noopener" style="color:var(--accent);">@ANDPOLIENKO</a>
                     </p>
                 </div>
             </div>
@@ -2821,7 +2821,7 @@
                     <a href="#method" class="footer-link">Формат</a>
                     <a href="#quiz" class="footer-link">Тест</a>
                     <a href="#faq" class="footer-link">Вопросы</a>
-                    <a href="https://t.me/polienko" target="_blank" rel="noopener" class="footer-link footer-tg-link">
+                    <a href="https://t.me/abgreit_tela" target="_blank" rel="noopener" class="footer-link footer-tg-link">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-16.6 6.593C2.4 9.7 2.4 10.75 3.6 11.145l4.065 1.272 1.573 4.9c.21.65 1.02.9 1.573.455l2.263-1.9 4.405 3.228c.81.595 1.96.21 2.165-.762L21.945 4.1c.3-1.395-.69-2.015-1.747-1.667zM8.75 13.775l-.58 3.14-1.14-3.56 9.9-6.14-8.18 6.56z" fill="currentColor"/></svg>
                         Telegram
                     </a>
@@ -2914,6 +2914,7 @@
 
             let currentQuizIndex = 0;
             let yesAnswersCount = 0;
+            const quizAnswers = {};
 
             const qBox = document.getElementById('quizQuestionBox');
             const rBox = document.getElementById('quizResultBox');
@@ -2944,6 +2945,7 @@
             }
 
             function handleAnswer(isYes) {
+                quizAnswers['step' + (currentQuizIndex + 1)] = isYes ? 'yes' : 'no';
                 if (isYes) yesAnswersCount++;
                 currentQuizIndex++;
 
@@ -3011,7 +3013,7 @@
                 });
             });
 
-            // 6. Отправка формы заявки
+            // 6. Отправка формы заявки через Cloudflare Worker
             const submitBtn = document.getElementById('ctaSubmitBtn');
             if (submitBtn) {
                 submitBtn.addEventListener('click', () => {
@@ -3046,19 +3048,44 @@
                     msg += `\n📝 Ситуация: ${situation || '—'}`;
                     msg += `\n📱 Telegram: ${telegram}`;
 
-                    fetch('/send', {
+                    submitBtn.disabled = true;
+                    const originalBtnText = submitBtn.innerText;
+                    submitBtn.innerText = 'Отправка...';
+
+                    const payload = {
+                        contact: telegram,
+                        request: situation || '—',
+                        // Структура полей для Cloudflare Worker
+                        exp_psy: answers.q1 || 'no',
+                        exp_hypno: answers.q2 || 'no',
+                        self_dev: 'yes',
+                        psy_health: 'no',
+                        readiness: answers.q3 || 'yes',
+                        q4_emotion: answers.q4 || 'yes',
+                        q5_involvement: answers.q5 || 'yes',
+                        quiz_data: quizAnswers,
+                        message: msg
+                    };
+
+                    fetch('https://telegram.polienkoandrej.workers.dev/', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: msg })
+                        body: JSON.stringify(payload)
                     })
-                    .then(r => r.ok ? r.json() : Promise.reject(r))
+                    .then(r => r.ok ? r.json().catch(() => ({})) : Promise.reject(r))
                     .then(() => {
                         document.getElementById('ctaFormInner').style.display = 'none';
                         document.getElementById('ctaSuccess').style.display = 'block';
                     })
-                    .catch(() => {
+                    .catch((err) => {
+                        console.error('Submit response:', err);
+                        // Показываем подтверждение
                         document.getElementById('ctaFormInner').style.display = 'none';
                         document.getElementById('ctaSuccess').style.display = 'block';
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalBtnText;
                     });
                 });
             }
