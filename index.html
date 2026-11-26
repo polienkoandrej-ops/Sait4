@@ -112,41 +112,244 @@
 
         .brand-name {
             font-weight: 700;
-            color: var(--text-primary);
+            color: #FFFFFF;
             letter-spacing: -0.2px;
-            font-size: 15px;
+            font-size: 16px;
+            white-space: nowrap;
         }
 
         .brand-divider {
             color: var(--accent);
+            font-weight: 700;
         }
 
         .brand-desc {
-            color: var(--text-muted);
-            font-weight: 400;
+            color: #D1D5DB;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.35;
         }
 
-        .header-cta-btn {
-            display: inline-flex;
+        /* Кнопка сэндвича */
+        .menu-toggle-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(224, 115, 64, 0.35);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 9px 20px;
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #FFFFFF;
-            background: var(--accent-gradient);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(224, 115, 64, 0.3);
-            white-space: nowrap;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .header-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(224, 115, 64, 0.5);
-            filter: brightness(1.08);
+        .menu-toggle-btn:hover {
+            background: rgba(224, 115, 64, 0.15);
+            border-color: var(--accent);
+            box-shadow: 0 0 16px rgba(224, 115, 64, 0.3);
+            transform: scale(1.04);
+        }
+
+        .hamburger-box {
+            width: 20px;
+            height: 14px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-line {
+            width: 100%;
+            height: 2px;
+            background: #FFFFFF;
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background 0.25s ease;
+            transform-origin: center;
+        }
+
+        .menu-toggle-btn.is-active .hamburger-line:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+            background: #FFA56E;
+        }
+
+        .menu-toggle-btn.is-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle-btn.is-active .hamburger-line:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+            background: #FFA56E;
+        }
+
+        /* Затемняющий фон */
+        .menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 10, 15, 0.65);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+            z-index: 98;
+        }
+
+        .menu-backdrop.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Выпадающее меню сэндвича */
+        .nav-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 24px;
+            width: 330px;
+            max-width: calc(100vw - 32px);
+            background: linear-gradient(165deg, #1C2330 0%, #12161F 100%);
+            border: 1.5px solid rgba(224, 115, 64, 0.45);
+            border-radius: 20px;
+            padding: 14px;
+            box-shadow: 0 24px 65px rgba(0, 0, 0, 0.8), 0 0 40px rgba(224, 115, 64, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.96);
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                        visibility 0.3s;
+            z-index: 99;
+            transform-origin: top right;
+        }
+
+        .nav-dropdown.is-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .nav-dropdown-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #FFFFFF;
+        }
+
+        .nav-item:hover {
+            background: rgba(224, 115, 64, 0.12);
+            border-color: rgba(224, 115, 64, 0.5);
+            transform: translateX(4px);
+        }
+
+        .nav-item-icon {
+            font-size: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(224, 115, 64, 0.12);
+            border: 1px solid rgba(224, 115, 64, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .nav-item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex-grow: 1;
+        }
+
+        .nav-item-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+
+        .nav-item-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .nav-item-arrow {
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 700;
+            opacity: 0.6;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .nav-item:hover .nav-item-arrow {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        .nav-item-cta {
+            background: linear-gradient(135deg, rgba(224, 115, 64, 0.18) 0%, rgba(224, 115, 64, 0.06) 100%);
+            border: 1.5px solid rgba(224, 115, 64, 0.5);
+        }
+
+        .nav-item-cta .nav-item-icon {
+            background: var(--accent);
+            color: #FFFFFF;
+            border-color: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .nav-item-cta:hover {
+            background: linear-gradient(135deg, rgba(224, 115, 64, 0.28) 0%, rgba(224, 115, 64, 0.12) 100%);
+            border-color: #FFA56E;
+        }
+
+        .nav-item-tg .nav-item-icon {
+            background: rgba(36, 161, 222, 0.15);
+            border-color: rgba(36, 161, 222, 0.4);
+            color: #24A1DE;
+        }
+
+        .nav-item-tg:hover {
+            border-color: rgba(36, 161, 222, 0.6);
+            background: rgba(36, 161, 222, 0.12);
+        }
+
+        @media (max-width: 640px) {
+            .brand {
+                gap: 2px 8px;
+            }
+            .brand-divider {
+                display: none;
+            }
+            .brand-desc {
+                display: block;
+                width: 100%;
+                font-size: 11.5px;
+                color: #B0B9C6;
+            }
+            .nav-dropdown {
+                right: 16px;
+                width: calc(100vw - 32px);
+            }
         }
 
         /* Главный экран (Hero) */
@@ -299,13 +502,14 @@
 
         /* При наведении: карточка плавно и солидно раскрывается, акцентируя внимание */
         .fact-card:hover {
-            transform: translateY(-10px) scale(1.10);
+            transform: translateY(-8px) scale(1.06);
             z-index: 40;
             border-color: #FFA56E;
             background: linear-gradient(150deg, #242C3B 0%, #171D27 100%);
             box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), 
                         0 0 45px rgba(224, 115, 64, 0.55), 
                         inset 0 0 20px rgba(224, 115, 64, 0.2);
+            transition-delay: 0s !important;
         }
 
         /* Эффект прожектора: соседние карточки мягко отступают на второй план */
@@ -585,11 +789,12 @@
 
         /* При наведении: карточка плавно и уверенно раскрывается, сохраняя безупречную читаемость */
         .anatomy-card:hover {
-            transform: translateY(-10px) scale(1.10);
+            transform: translateY(-8px) scale(1.06);
             z-index: 30;
             border-color: #FFA56E;
             background: linear-gradient(150deg, #222938 0%, #161B25 100%);
             box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), 0 0 45px rgba(224, 115, 64, 0.55);
+            transition-delay: 0s !important;
         }
 
         /* Эффект прожектора: соседние неактивные карточки мягко приглушаются */
@@ -802,16 +1007,16 @@
         }
 
         .quiz-section .section-badge {
-            color: var(--accent);
+            color: #FFB07C;
         }
 
         .quiz-section .section-title {
-            color: #141821;
+            color: #FFFFFF;
         }
 
         .quiz-section .section-lead,
         .quiz-section .section-lead p {
-            color: #111827 !important;
+            color: #F1F5F9 !important;
             font-weight: 500;
             font-size: 18px;
             line-height: 1.6;
@@ -825,7 +1030,15 @@
             box-shadow: 0 16px 45px rgba(60, 40, 20, 0.08), 0 0 30px rgba(224, 115, 64, 0.06);
             position: relative;
             overflow: hidden;
-            transition: all 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(224, 115, 64, 0.6);
+            box-shadow: 0 22px 55px rgba(60, 40, 20, 0.12), 0 0 35px rgba(224, 115, 64, 0.1);
         }
 
         .quiz-step-indicator {
@@ -866,13 +1079,13 @@
         }
 
         .quiz-question-box {
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .quiz-question-category {
             font-size: 13px;
             font-weight: 700;
-            color: var(--text-muted);
+            color: #C85F2D;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
@@ -932,6 +1145,14 @@
 
         .quiz-result {
             display: none;
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .quiz-result.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .quiz-result-badge {
@@ -1006,16 +1227,16 @@
         }
 
         .author-manifesto-section .section-badge {
-            color: var(--accent);
+            color: #FFB07C;
         }
 
         .author-manifesto-section .section-title {
-            color: #141821;
+            color: #FFFFFF;
         }
 
         .author-manifesto-section .section-lead,
         .author-manifesto-section .section-lead p {
-            color: #111827 !important;
+            color: #F1F5F9 !important;
             font-weight: 500;
             font-size: 18px;
             line-height: 1.6;
@@ -1036,26 +1257,32 @@
             border-radius: 20px;
             padding: 34px 28px;
             box-shadow: 0 10px 30px rgba(60, 40, 20, 0.06);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 0.3s ease, 
-                        background 0.3s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
+            will-change: transform, box-shadow;
+            transform-origin: center center;
             display: flex;
             flex-direction: column;
             position: relative;
+            z-index: 1;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
         .manifesto-card:hover {
-            transform: translateY(-8px) scale(1.10) !important;
+            transform: translateY(-8px) scale(1.06);
             border-color: #E07340;
             background: #FAF4EB;
             box-shadow: 0 24px 55px rgba(60, 40, 20, 0.16), 0 0 32px rgba(224, 115, 64, 0.25);
-            z-index: 25;
+            z-index: 30;
+            transition-delay: 0s !important;
         }
 
         .manifesto-cards-grid:hover .manifesto-card:not(:hover) {
-            opacity: 0.85;
+            opacity: 0.72;
             transform: scale(0.98);
         }
 
@@ -1069,7 +1296,7 @@
             font-weight: 800;
             padding: 6px 16px;
             border-radius: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
         }
 
         .manifesto-card:hover .anatomy-step-num {
@@ -1077,6 +1304,7 @@
             color: #FFFFFF;
             border-color: var(--accent);
             box-shadow: 0 0 16px var(--accent-glow);
+            transform: scale(1.1);
         }
 
         .manifesto-card-title {
@@ -1092,9 +1320,46 @@
         }
 
         .manifesto-card-text {
-            color: #2D3748;
+            color: #111827;
             font-size: 15.5px;
             line-height: 1.7;
+            font-weight: 450;
+        }
+
+        .manifesto-card .anatomy-insight {
+            background: rgba(224, 115, 64, 0.08);
+            border-left: 3px solid #E07340;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 18px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(8px);
+            transition: opacity 1.4s ease 0.2s, max-height 1.4s ease, transform 1.4s ease 0.2s;
+        }
+
+        .manifesto-card:hover .anatomy-insight {
+            opacity: 1;
+            max-height: 160px;
+            transform: translateY(0);
+        }
+
+        .manifesto-card .insight-tag {
+            color: #C85F2D;
+            font-size: 11.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .manifesto-card .insight-desc {
+            color: #1A202C;
+            font-size: 14px;
+            line-height: 1.55;
+            font-weight: 500;
         }
 
         .situations-grid {
@@ -1112,27 +1377,33 @@
             border-radius: 20px;
             padding: 34px 28px;
             box-shadow: 0 10px 30px rgba(60, 40, 20, 0.06);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 0.3s ease, 
-                        background 0.3s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        background 0.4s ease,
+                        opacity 0.4s ease;
+            will-change: transform, box-shadow;
+            transform-origin: center center;
             display: flex;
             flex-direction: column;
             position: relative;
+            z-index: 1;
             cursor: pointer;
+            -webkit-font-smoothing: antialiased;
         }
 
         .situation-card:hover {
-            transform: translateY(-8px) scale(1.10) !important;
+            transform: translateY(-8px) scale(1.05);
             border-color: #E07340;
             background: #FAF4EB;
             box-shadow: 0 24px 55px rgba(60, 40, 20, 0.16), 0 0 32px rgba(224, 115, 64, 0.25);
-            z-index: 25;
+            z-index: 30;
+            transition-delay: 0s !important;
         }
 
         .situations-grid:hover .situation-card:not(:hover) {
-            opacity: 0.85;
-            transform: scale(0.99);
+            opacity: 0.72;
+            transform: scale(0.98);
         }
 
         .situation-card .anatomy-step-num {
@@ -1143,6 +1414,9 @@
             font-weight: 800;
             padding: 6px 16px;
             border-radius: 10px;
+            align-self: flex-start;
+            margin-bottom: 18px;
+            transition: all 0.35s ease;
         }
 
         .situation-card:hover .anatomy-step-num {
@@ -1150,6 +1424,7 @@
             color: #FFFFFF;
             border-color: var(--accent);
             box-shadow: 0 0 16px var(--accent-glow);
+            transform: scale(1.1);
         }
 
         .situation-card .anatomy-card-title {
@@ -1175,6 +1450,17 @@
             border-radius: 8px;
             padding: 14px 16px;
             margin-top: 18px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(8px);
+            transition: opacity 1.4s ease 0.2s, max-height 1.4s ease, transform 1.4s ease 0.2s;
+        }
+
+        .situation-card:hover .anatomy-insight {
+            opacity: 1;
+            max-height: 160px;
+            transform: translateY(0);
         }
 
         .situation-card .insight-tag {
@@ -1201,15 +1487,17 @@
             border-radius: 20px;
             padding: 38px 44px;
             box-shadow: 0 16px 40px rgba(60, 40, 20, 0.07), 0 0 25px rgba(224, 115, 64, 0.1);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
         .takeaway-card-light:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-color: rgba(224, 115, 64, 0.7);
-            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.1), 0 0 35px rgba(224, 115, 64, 0.22);
+            box-shadow: 0 24px 55px rgba(60, 40, 20, 0.12), 0 0 35px rgba(224, 115, 64, 0.22);
         }
 
         .takeaway-card-light .takeaway-text {
@@ -1235,16 +1523,16 @@
         }
 
         .faq-section .section-badge {
-            color: var(--accent);
+            color: #FFB07C;
         }
 
         .faq-section .section-title {
-            color: #141821;
+            color: #FFFFFF;
         }
 
         .faq-section .section-lead,
         .faq-section .section-lead p {
-            color: #111827 !important;
+            color: #F1F5F9 !important;
             font-weight: 500;
             font-size: 18px;
             line-height: 1.6;
@@ -1572,9 +1860,6 @@
                 max-width: 100%;
             }
 
-            .brand-desc, .brand-divider {
-                display: none;
-            }
 
             .faq-section {
                 padding: 64px 0 76px;
@@ -1608,12 +1893,13 @@
             color: #191E28;
         }
 
-        .cta-section .section-badge { color: var(--accent); }
-        .cta-section .section-title { color: #141821; }
+        .cta-section .section-badge { color: #FFB07C; }
+        .cta-section .section-title { color: #FFFFFF; }
 
         .cta-lead {
-            color: #475467;
+            color: #F1F5F9;
             font-size: clamp(16px, 1.4vw, 18px);
+            font-weight: 500;
             line-height: 1.75;
             max-width: 620px;
             margin: 0 auto 56px;
@@ -2078,7 +2364,58 @@
                 <span class="brand-desc">Работа с первопричиной накопления жировых клеток</span>
             </div>
             <div class="header-nav">
-                <a href="#application" class="header-cta-btn">Записаться</a>
+                <button type="button" class="menu-toggle-btn" id="menuToggleBtn" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Затемняющий фон -->
+        <div class="menu-backdrop" id="menuBackdrop"></div>
+
+        <!-- Выпадающее меню-сэндвич (4 пункта) -->
+        <div class="nav-dropdown" id="navDropdown" role="dialog" aria-modal="true" aria-label="Навигация по сайту">
+            <div class="nav-dropdown-inner">
+                <a href="#application" class="nav-item nav-item-cta" data-menu-link>
+                    <div class="nav-item-icon">📋</div>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Консультация</span>
+                        <span class="nav-item-sub">Заполнить анкету на разбор ситуации</span>
+                    </div>
+                    <span class="nav-item-arrow">→</span>
+                </a>
+                <a href="#quiz" class="nav-item" data-menu-link>
+                    <div class="nav-item-icon">🎯</div>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Экспресс-тест</span>
+                        <span class="nav-item-sub">5 вопросов: реакция организма на стресс</span>
+                    </div>
+                    <span class="nav-item-arrow">→</span>
+                </a>
+                <a href="#faq" class="nav-item" data-menu-link>
+                    <div class="nav-item-icon">❓</div>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Частые вопросы</span>
+                        <span class="nav-item-sub">Ответы на сомнения и правила работы</span>
+                    </div>
+                    <span class="nav-item-arrow">→</span>
+                </a>
+                <a href="https://t.me/abgreit_tela" target="_blank" rel="noopener noreferrer" class="nav-item nav-item-tg" data-menu-link>
+                    <div class="nav-item-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.98C15.37 16.73 15.09 16.98 14.83 17.01C14.25 17.06 13.81 16.63 13.25 16.26C12.37 15.68 11.87 15.32 11.02 14.76C10.03 14.11 10.68 13.76 11.23 13.18C11.38 13.03 13.88 10.75 13.93 10.54C13.94 10.51 13.94 10.42 13.88 10.37C13.82 10.32 13.74 10.34 13.68 10.35C13.59 10.37 12.27 11.25 10.71 12.3C9.48 13.14 8.36 13.55 8.33 13.55C7.62 13.33 6.33 12.94 6.23 12.9C5.74 12.71 5.35 12.6 5.39 12.33C5.41 12.19 5.61 12.05 5.98 11.9C8.28 10.9 9.82 10.29 10.59 9.97C12.79 9.06 13.25 8.9 13.55 8.9C13.61 8.9 13.82 8.92 13.96 9.03C14.07 9.12 14.1 9.25 14.11 9.34C14.1 9.4 16.64 8.8 16.64 8.8Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="nav-item-content">
+                        <span class="nav-item-title">Telegram-канал</span>
+                        <span class="nav-item-sub">Канал «Апгрейд тела»</span>
+                    </div>
+                    <span class="nav-item-arrow">↗</span>
+                </a>
             </div>
         </div>
     </header>
@@ -2495,6 +2832,10 @@
                         <p class="manifesto-card-text">
                             Я не передаю вас помощникам или «наставникам». Работа с подсознанием и глубокими эмоциями требует абсолютной конфиденциальности и ювелирной точности. Каждую сессию я провожу лично, ведя вас в одной связке до момента, пока организм не переключится.
                         </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Прямой контакт</span>
+                            <p class="insight-desc">Глубокие реакции подсознания корректируются только при личном доверительном взаимодействии без шаблонных схем.</p>
+                        </div>
                     </div>
 
                     <div class="manifesto-card reveal-on-scroll stagger-2">
@@ -2503,6 +2844,10 @@
                         <p class="manifesto-card-text">
                             Я не диетолог и не тренер. Я не считаю ваши калории и не заставляю терпеть голод. Моя задача — устранить внутреннюю тревогу и снять команду на защиту. Когда уходит первопричина, тело само отказывается от лишней еды без насилия над волей.
                         </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Снятие тревоги</span>
+                            <p class="insight-desc">Когда психика чувствует спокойствие и защищённость — потребность заедать стресс растворяется сама собой.</p>
+                        </div>
                     </div>
 
                     <div class="manifesto-card reveal-on-scroll stagger-3">
@@ -2511,6 +2856,10 @@
                         <p class="manifesto-card-text">
                             Я не растягиваю консультации на месяцы ради процесса. Мы работаем динамически: как только подсознание сбросило аварийный режим и результат зафиксирован — работа окончена. Тело само перестаёт держаться за жировой панцирь, и вы возвращаетесь к лёгкости без страха отката.
                         </p>
+                        <div class="anatomy-insight">
+                            <span class="insight-tag">Фиксация нормы</span>
+                            <p class="insight-desc">Как только внутренняя причина тревоги нейтрализована — организм переключается в здоровый режим и удерживает результат.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -2927,8 +3276,12 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-revealed');
+                            setTimeout(() => {
+                                entry.target.style.transitionDelay = '0s';
+                            }, 2800);
                         } else {
                             entry.target.classList.remove('is-revealed');
+                            entry.target.style.transitionDelay = '';
                         }
                     });
                 }, {
@@ -2982,6 +3335,7 @@
 
             function showQuestion(index) {
                 if (!textEl) return;
+                qBox.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
                 qBox.style.opacity = '0';
                 qBox.style.transform = 'translateY(10px)';
                 
@@ -2992,9 +3346,10 @@
                     if (catEl) catEl.textContent = item.cat;
                     if (textEl) textEl.textContent = item.text;
                     
+                    qBox.style.transition = 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
                     qBox.style.opacity = '1';
                     qBox.style.transform = 'translateY(0)';
-                }, 180);
+                }, 240);
             }
 
             function handleAnswer(isYes, clickedBtn) {
@@ -3010,65 +3365,90 @@
                     } else {
                         showResults();
                     }
-                }, 160);
+                }, 220);
             }
 
             function showResults() {
-                if (qBox) qBox.style.display = 'none';
-                if (rBox) rBox.style.display = 'block';
-
-                if (yesAnswersCount >= 3) {
-                    if (resultBadge) {
-                        resultBadge.textContent = 'Защитная реакция организма';
-                        resultBadge.style.color = '#C85F2D';
-                        resultBadge.style.background = 'rgba(224, 115, 64, 0.12)';
-                        resultBadge.style.borderColor = 'rgba(224, 115, 64, 0.35)';
-                    }
-                    if (resultTitle) {
-                        resultTitle.textContent = 'Организм удерживает жировые клетки как защиту от стресса';
-                    }
-                    if (resultBody) {
-                        resultBody.innerHTML = `
-                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> признаков защитной реакции тела.</p>
-                            <p>Ваше подсознание воспринимает жировую ткань как биологическую броню от эмоционального напряжения и перегрузок. В таком состоянии любые диеты и насилие над собой организм расценивает как дополнительную угрозу и отвечает новыми срывами.</p>
-                            <p><strong>Рекомендация:</strong> Вам имеет смысл заполнить анкету на индивидуальный разбор ситуации. Когда уходит первопричина тревоги в подсознании — организм сам спокойно отпускает вес.</p>
-                        `;
-                    }
-                    if (quizCtaBtn) {
-                        quizCtaBtn.innerHTML = '<span>Заполнить анкету на разбор ситуации</span>';
-                    }
-                } else {
-                    const noCount = quizData.length - yesAnswersCount;
-                    if (resultBadge) {
-                        resultBadge.textContent = 'Спокойное состояние организма';
-                        resultBadge.style.color = '#2E7D32';
-                        resultBadge.style.background = 'rgba(46, 125, 50, 0.1)';
-                        resultBadge.style.borderColor = 'rgba(46, 125, 50, 0.3)';
-                    }
-                    if (resultTitle) {
-                        resultTitle.textContent = 'У вашего организма нет острой потребности в защите';
-                    }
-                    if (resultBody) {
-                        resultBody.innerHTML = `
-                            <p>Вы ответили «Нет» на <strong>${noCount} из 5</strong> вопросов теста.</p>
-                            <p>Масштабного стрессового панциря у вашего тела нет. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный точечный триггер, который мешает телу сбросить лишнее.</p>
-                            <p><strong>Рекомендация:</strong> Глубинная перестройка вам не обязательна. Достаточно короткой консультации, чтобы прояснить этот локальный момент и наметить простые шаги.</p>
-                        `;
-                    }
-                    if (quizCtaBtn) {
-                        quizCtaBtn.innerHTML = '<span>Записаться на консультацию</span>';
-                    }
+                if (qBox) {
+                    qBox.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    qBox.style.opacity = '0';
+                    qBox.style.transform = 'translateY(-10px)';
                 }
+
+                setTimeout(() => {
+                    if (qBox) qBox.style.display = 'none';
+                    if (rBox) {
+                        rBox.style.display = 'block';
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                rBox.classList.add('is-visible');
+                            });
+                        });
+                    }
+
+                    if (yesAnswersCount >= 3) {
+                        if (resultBadge) {
+                            resultBadge.textContent = 'Защитная реакция организма';
+                            resultBadge.style.color = '#C85F2D';
+                            resultBadge.style.background = 'rgba(224, 115, 64, 0.12)';
+                            resultBadge.style.borderColor = 'rgba(224, 115, 64, 0.35)';
+                        }
+                        if (resultTitle) {
+                            resultTitle.textContent = 'Организм удерживает жировые клетки как защиту от стресса';
+                        }
+                        if (resultBody) {
+                            resultBody.innerHTML = `
+                                <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> признаков защитной реакции тела.</p>
+                                <p>Ваше подсознание воспринимает жировую ткань как биологическую броню от эмоционального напряжения и перегрузок. В таком состоянии любые диеты и насилие над собой организм расценивает как дополнительную угрозу и отвечает новыми срывами.</p>
+                                <p><strong>Рекомендация:</strong> Вам имеет смысл заполнить анкету на индивидуальный разбор ситуации. Когда уходит первопричина тревоги в подсознании — организм сам спокойно отпускает вес.</p>
+                            `;
+                        }
+                        if (quizCtaBtn) {
+                            quizCtaBtn.innerHTML = '<span>Заполнить анкету на разбор ситуации</span>';
+                        }
+                    } else {
+                        const noCount = quizData.length - yesAnswersCount;
+                        if (resultBadge) {
+                            resultBadge.textContent = 'Спокойное состояние организма';
+                            resultBadge.style.color = '#2E7D32';
+                            resultBadge.style.background = 'rgba(46, 125, 50, 0.1)';
+                            resultBadge.style.borderColor = 'rgba(46, 125, 50, 0.3)';
+                        }
+                        if (resultTitle) {
+                            resultTitle.textContent = 'У вашего организма нет острой потребности в защите';
+                        }
+                        if (resultBody) {
+                            resultBody.innerHTML = `
+                                <p>Вы ответили «Нет» на <strong>${noCount} из 5</strong> вопросов теста.</p>
+                                <p>Масштабного стрессового панциря у вашего тела нет. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный точечный триггер, который мешает телу сбросить лишнее.</p>
+                                <p><strong>Рекомендация:</strong> Глубинная перестройка вам не обязательна. Достаточно короткой консультации, чтобы прояснить этот локальный момент и наметить простые шаги.</p>
+                            `;
+                        }
+                        if (quizCtaBtn) {
+                            quizCtaBtn.innerHTML = '<span>Записаться на консультацию</span>';
+                        }
+                    }
+                }, 300);
             }
 
             if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true, btnYes));
             if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false, btnNo));
             if (resetBtn) resetBtn.addEventListener('click', () => {
-                currentQuizIndex = 0;
-                yesAnswersCount = 0;
-                if (rBox) rBox.style.display = 'none';
-                if (qBox) qBox.style.display = 'block';
-                showQuestion(0);
+                if (rBox) {
+                    rBox.classList.remove('is-visible');
+                }
+                setTimeout(() => {
+                    currentQuizIndex = 0;
+                    yesAnswersCount = 0;
+                    for (let k in quizAnswers) delete quizAnswers[k];
+                    if (rBox) rBox.style.display = 'none';
+                    if (qBox) {
+                        qBox.style.display = 'block';
+                        qBox.style.opacity = '0';
+                        qBox.style.transform = 'translateY(10px)';
+                        showQuestion(0);
+                    }
+                }, 250);
             });
 
             // 4. Аккордеон FAQ
@@ -3200,6 +3580,53 @@
                         submitBtn.disabled = false;
                         submitBtn.innerText = originalBtnText;
                     });
+                });
+            }
+
+            // 7. Логика работы меню-сэндвича
+            const menuBtn = document.getElementById('menuToggleBtn');
+            const menuDropdown = document.getElementById('navDropdown');
+            const menuBackdrop = document.getElementById('menuBackdrop');
+            const menuLinks = document.querySelectorAll('[data-menu-link]');
+
+            function toggleMenu(forceOpen) {
+                if (!menuDropdown || !menuBtn) return;
+                const isOpen = forceOpen !== undefined ? forceOpen : !menuDropdown.classList.contains('is-active');
+                if (isOpen) {
+                    menuDropdown.classList.add('is-active');
+                    if (menuBackdrop) menuBackdrop.classList.add('is-active');
+                    menuBtn.classList.add('is-active');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                    menuBtn.setAttribute('aria-label', 'Закрыть меню');
+                } else {
+                    menuDropdown.classList.remove('is-active');
+                    if (menuBackdrop) menuBackdrop.classList.remove('is-active');
+                    menuBtn.classList.remove('is-active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.setAttribute('aria-label', 'Открыть меню');
+                }
+            }
+
+            if (menuBtn && menuDropdown) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                if (menuBackdrop) {
+                    menuBackdrop.addEventListener('click', () => toggleMenu(false));
+                }
+
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        toggleMenu(false);
+                    });
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && menuDropdown.classList.contains('is-active')) {
+                        toggleMenu(false);
+                    }
                 });
             }
         });
