@@ -3041,21 +3041,32 @@
                         q5: 'Личная включённость на сессиях'
                     };
                     const valMap = { yes: 'Да', no: 'Нет', 'не ответила': '—' };
-                    let msg = '📋 Новая заявка с сайта\n\n';
-                    for (const [k, v] of Object.entries(answers)) {
-                        msg += `• ${labels[k]}: ${valMap[v] || v}\n`;
+                    let msg = '⚡️ НОВАЯ ЗАЯВКА С САЙТА exit-crisis.com\n\n';
+
+                    const quizKeys = Object.keys(quizAnswers);
+                    if (quizKeys.length > 0) {
+                        msg += '📊 Экспресс-тест (результаты):\n';
+                        quizKeys.forEach((key, idx) => {
+                            msg += `• Вопрос ${idx + 1}: ${quizAnswers[key] === 'yes' ? 'Да' : 'Нет'}\n`;
+                        });
+                        msg += '\n';
                     }
-                    msg += `\n📝 Ситуация: ${situation || '—'}`;
-                    msg += `\n📱 Telegram: ${telegram}`;
+
+                    msg += '📋 Ответы на вопросы перед записью:\n';
+                    for (const [k, v] of Object.entries(answers)) {
+                        msg += `• ${labels[k] || k}: ${valMap[v] || v}\n`;
+                    }
+                    msg += `\n📝 Описание ситуации:\n${situation || '—'}`;
+                    msg += `\n\n📱 Контакт (Telegram): ${telegram}`;
 
                     submitBtn.disabled = true;
                     const originalBtnText = submitBtn.innerText;
                     submitBtn.innerText = 'Отправка...';
 
                     const payload = {
+                        text: msg,
                         contact: telegram,
                         request: situation || '—',
-                        // Структура полей для Cloudflare Worker
                         exp_psy: answers.q1 || 'no',
                         exp_hypno: answers.q2 || 'no',
                         self_dev: 'yes',
@@ -3063,25 +3074,22 @@
                         readiness: answers.q3 || 'yes',
                         q4_emotion: answers.q4 || 'yes',
                         q5_involvement: answers.q5 || 'yes',
-                        quiz_data: quizAnswers,
-                        message: msg
+                        quiz_data: quizAnswers
                     };
 
-                    fetch('https://telegram.polienkoandrej.workers.dev/', {
+                    fetch('https://yellow-truth-8e00.polienkoandrej.workers.dev/', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     })
-                    .then(r => r.ok ? r.json().catch(() => ({})) : Promise.reject(r))
-                    .then(() => {
+                    .then(r => {
+                        if (!r.ok) throw new Error('Network response: ' + r.status);
                         document.getElementById('ctaFormInner').style.display = 'none';
                         document.getElementById('ctaSuccess').style.display = 'block';
                     })
                     .catch((err) => {
                         console.error('Submit response:', err);
-                        // Показываем подтверждение
-                        document.getElementById('ctaFormInner').style.display = 'none';
-                        document.getElementById('ctaSuccess').style.display = 'block';
+                        alert('Не удалось отправить заявку. Пожалуйста, напишите напрямую в Telegram: @ANDPOLIENKO');
                     })
                     .finally(() => {
                         submitBtn.disabled = false;
