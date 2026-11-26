@@ -59,14 +59,15 @@
             background: linear-gradient(180deg, 
                 #0B0E12 0%, 
                 #0E131C 12%, 
-                #131A26 25%, 
-                #1D2636 38%, 
-                #2C374A 52%, 
-                #4D5C75 66%, 
-                #8595AE 78%, 
-                #C5CEDC 88%, 
-                #EFF2F7 95%, 
-                #FAFBFD 100%
+                #141A26 24%, 
+                #1D2536 36%, 
+                #2C364A 48%, 
+                #454D5E 60%, 
+                #6A6F7B 70%, 
+                #979085 80%, 
+                #C4B7A7 89%, 
+                #DECFC0 95%, 
+                #EBE0D3 100%
             );
             color: var(--text-primary);
             font-family: var(--font-main);
@@ -808,16 +809,20 @@
             color: #141821;
         }
 
-        .quiz-section .section-lead {
-            color: #475467;
+        .quiz-section .section-lead,
+        .quiz-section .section-lead p {
+            color: #111827 !important;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .quiz-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(224, 115, 64, 0.28);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.45);
             border-radius: 24px;
             padding: 44px 40px;
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.06), 0 0 30px rgba(224, 115, 64, 0.08);
+            box-shadow: 0 16px 45px rgba(60, 40, 20, 0.08), 0 0 30px rgba(224, 115, 64, 0.06);
             position: relative;
             overflow: hidden;
             transition: all 0.5s ease;
@@ -837,8 +842,8 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 6px 14px;
-            background: rgba(224, 115, 64, 0.08);
-            border: 1px solid rgba(224, 115, 64, 0.2);
+            background: rgba(224, 115, 64, 0.1);
+            border: 1px solid rgba(224, 115, 64, 0.25);
             border-radius: 8px;
         }
 
@@ -893,61 +898,79 @@
             font-size: 18px;
             font-weight: 700;
             border-radius: 14px;
-            border: 2px solid rgba(224, 115, 64, 0.25);
-            background: #FFFFFF;
+            border: 2px solid rgba(190, 150, 115, 0.5);
+            background: #EFE4D6;
             color: #161B24;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .quiz-btn:hover {
-            border-color: #2D3748;
-            background: #F8FAFC;
-            color: #000000;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        @media (hover: hover) {
+            .quiz-btn:hover {
+                border-color: var(--accent);
+                background: #FFFDF9;
+                color: #000000;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 22px rgba(224, 115, 64, 0.15);
+            }
+        }
+
+        .quiz-btn:active,
+        .quiz-btn.btn-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #FFFFFF;
+            transform: scale(0.97);
+            box-shadow: 0 4px 15px rgba(224, 115, 64, 0.35);
         }
 
         .quiz-result {
             display: none;
-            animation: fadeIn 0.8s ease forwards;
         }
 
         .quiz-result-badge {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 800;
             color: #C85F2D;
-            background: rgba(224, 115, 64, 0.1);
+            background: rgba(224, 115, 64, 0.12);
             border: 1px solid rgba(224, 115, 64, 0.3);
-            padding: 6px 14px;
+            padding: 7px 16px;
             border-radius: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .quiz-result-title {
-            font-size: clamp(22px, 2.5vw, 28px);
+            font-size: clamp(21px, 2.4vw, 26px);
             font-weight: 800;
-            color: #141821;
-            line-height: 1.3;
+            color: #111827;
+            line-height: 1.35;
             margin-bottom: 20px;
         }
 
         .quiz-result-body {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #475467;
+            font-size: 16.5px;
+            line-height: 1.75;
+            color: #1A202C;
             margin-bottom: 32px;
         }
 
         .quiz-result-body p {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
+            color: #1A202C;
+        }
+
+        .quiz-result-body strong {
+            color: #0E1218;
+            font-weight: 700;
         }
 
         .quiz-result-actions {
@@ -990,8 +1013,12 @@
             color: #141821;
         }
 
-        .author-manifesto-section .section-lead {
-            color: #475467;
+        .author-manifesto-section .section-lead,
+        .author-manifesto-section .section-lead p {
+            color: #111827 !important;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .manifesto-cards-grid {
@@ -1004,47 +1031,45 @@
         }
 
         .manifesto-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.45);
             border-radius: 20px;
             padding: 34px 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 0.4s ease, 
-                        background 0.4s ease,
-                        opacity 0.4s ease;
-            will-change: transform, box-shadow;
+            box-shadow: 0 10px 30px rgba(60, 40, 20, 0.06);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.3s ease, 
+                        background 0.3s ease;
             display: flex;
             flex-direction: column;
             position: relative;
             cursor: pointer;
-            -webkit-font-smoothing: antialiased;
         }
 
         .manifesto-card:hover {
-            transform: translateY(-8px) scale(1.06);
+            transform: translateY(-8px) scale(1.10) !important;
             border-color: #E07340;
-            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12), 0 0 32px rgba(224, 115, 64, 0.22);
-            z-index: 20;
+            background: #FAF4EB;
+            box-shadow: 0 24px 55px rgba(60, 40, 20, 0.16), 0 0 32px rgba(224, 115, 64, 0.25);
+            z-index: 25;
         }
 
         .manifesto-cards-grid:hover .manifesto-card:not(:hover) {
-            opacity: 0.72;
+            opacity: 0.85;
             transform: scale(0.98);
         }
 
         .manifesto-card .anatomy-step-num {
-            background: rgba(224, 115, 64, 0.08);
-            border: 1px solid rgba(224, 115, 64, 0.2);
+            background: rgba(224, 115, 64, 0.12);
+            border: 1.5px solid rgba(224, 115, 64, 0.35);
             color: #C85F2D;
             align-self: flex-start;
             margin-bottom: 18px;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 800;
-            padding: 5px 14px;
-            border-radius: 8px;
-            transition: all 0.35s ease;
+            padding: 6px 16px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
         .manifesto-card:hover .anatomy-step-num {
@@ -1055,21 +1080,21 @@
         }
 
         .manifesto-card-title {
-            color: #161B24;
-            font-size: 19px;
+            color: #111827;
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 14px;
-            line-height: 1.35;
+            line-height: 1.4;
         }
 
         .manifesto-card:hover .manifesto-card-title {
-            color: #0E1219;
+            color: #000000;
         }
 
         .manifesto-card-text {
-            color: #4B5565;
-            font-size: 15px;
-            line-height: 1.65;
+            color: #2D3748;
+            font-size: 15.5px;
+            line-height: 1.7;
         }
 
         .situations-grid {
@@ -1082,40 +1107,42 @@
         }
 
         .situation-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.45);
             border-radius: 20px;
             padding: 34px 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                        border-color 0.4s ease, 
-                        background 0.4s ease,
-                        opacity 0.4s ease;
-            will-change: transform, box-shadow;
+            box-shadow: 0 10px 30px rgba(60, 40, 20, 0.06);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.3s ease, 
+                        background 0.3s ease;
             display: flex;
             flex-direction: column;
             position: relative;
             cursor: pointer;
-            -webkit-font-smoothing: antialiased;
         }
 
         .situation-card:hover {
-            transform: translateY(-8px) scale(1.06);
+            transform: translateY(-8px) scale(1.10) !important;
             border-color: #E07340;
-            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12), 0 0 32px rgba(224, 115, 64, 0.22);
-            z-index: 20;
+            background: #FAF4EB;
+            box-shadow: 0 24px 55px rgba(60, 40, 20, 0.16), 0 0 32px rgba(224, 115, 64, 0.25);
+            z-index: 25;
         }
 
         .situations-grid:hover .situation-card:not(:hover) {
-            opacity: 0.72;
-            transform: scale(0.98);
+            opacity: 0.85;
+            transform: scale(0.99);
         }
 
         .situation-card .anatomy-step-num {
-            background: rgba(224, 115, 64, 0.08);
-            border: 1px solid rgba(224, 115, 64, 0.2);
+            background: rgba(224, 115, 64, 0.12);
+            border: 1.5px solid rgba(224, 115, 64, 0.35);
             color: #C85F2D;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 10px;
         }
 
         .situation-card:hover .anatomy-step-num {
@@ -1126,23 +1153,24 @@
         }
 
         .situation-card .anatomy-card-title {
-            color: #161B24;
+            color: #111827;
             font-size: 19px;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
         .situation-card:hover .anatomy-card-title {
-            color: #0E1219;
+            color: #000000;
         }
 
         .situation-card .anatomy-card-text {
-            color: #4B5565;
-            font-size: 15px;
-            line-height: 1.65;
+            color: #2D3748;
+            font-size: 15.5px;
+            line-height: 1.7;
         }
 
         .situation-card .anatomy-insight {
-            background: rgba(224, 115, 64, 0.06);
+            background: rgba(224, 115, 64, 0.08);
             border-left: 3px solid #E07340;
             border-radius: 8px;
             padding: 14px 16px;
@@ -1151,8 +1179,8 @@
 
         .situation-card .insight-tag {
             color: #C85F2D;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 11.5px;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
@@ -1160,20 +1188,20 @@
         }
 
         .situation-card .insight-desc {
-            color: #2D3748;
-            font-size: 13.5px;
-            line-height: 1.5;
+            color: #1A202C;
+            font-size: 14px;
+            line-height: 1.55;
             font-weight: 500;
         }
 
         /* Светлый выводной блок (Takeaway) */
         .takeaway-card-light {
-            background: #FFFFFF;
-            border: 1px solid rgba(224, 115, 64, 0.35);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.5);
             border-radius: 20px;
             padding: 38px 44px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06), 0 0 25px rgba(224, 115, 64, 0.12);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 16px 40px rgba(60, 40, 20, 0.07), 0 0 25px rgba(224, 115, 64, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
         }
@@ -1214,8 +1242,12 @@
             color: #141821;
         }
 
-        .faq-section .section-lead {
-            color: #475467;
+        .faq-section .section-lead,
+        .faq-section .section-lead p {
+            color: #111827 !important;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .faq-list {
@@ -1226,17 +1258,18 @@
         }
 
         .faq-item {
-            background: #FFFFFF;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.45);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-            transition: box-shadow 0.6s ease, border-color 0.5s ease;
+            box-shadow: 0 6px 20px rgba(60, 40, 20, 0.05);
+            transition: box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease;
         }
 
         .faq-item:hover {
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08), 0 0 20px rgba(224,115,64,0.1);
-            border-color: rgba(224,115,64,0.3);
+            box-shadow: 0 12px 32px rgba(60, 40, 20, 0.1), 0 0 20px rgba(224,115,64,0.12);
+            border-color: rgba(224,115,64,0.5);
+            background: #FAF4EB;
         }
 
         .faq-question {
@@ -1351,11 +1384,11 @@
         }
 
         .faq-consult-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(224,115,64,0.35);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(224,115,64,0.4);
             border-radius: 20px;
             padding: 44px 48px;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.06), 0 0 25px rgba(224,115,64,0.12);
+            box-shadow: 0 16px 40px rgba(60, 40, 20, 0.08), 0 0 25px rgba(224,115,64,0.1);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -1588,11 +1621,11 @@
         }
 
         .cta-form-wrap {
-            background: #FFFFFF;
-            border: 1px solid rgba(0,0,0,0.08);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.45);
             border-radius: 24px;
             padding: 48px 52px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.07), 0 0 30px rgba(224,115,64,0.07);
+            box-shadow: 0 20px 50px rgba(60, 40, 20, 0.08), 0 0 30px rgba(224,115,64,0.06);
             max-width: 760px;
             margin: 0 auto;
         }
@@ -1617,28 +1650,39 @@
 
         .cta-yn-btn {
             flex: 1;
-            padding: 13px 20px;
+            padding: 14px 20px;
             border-radius: 12px;
-            border: 1.5px solid rgba(0,0,0,0.12);
-            background: #F8FAFC;
+            border: 1.5px solid rgba(190, 150, 115, 0.5);
+            background: #EFE4D6;
             color: #2D3748;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             font-family: inherit;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .cta-yn-btn:hover {
-            border-color: #CBD5E0;
-            background: #EDF2F7;
+        @media (hover: hover) {
+            .cta-yn-btn:hover:not(.selected) {
+                border-color: var(--accent);
+                background: #FFFDF9;
+                color: #141821;
+                transform: translateY(-1px);
+            }
+        }
+
+        .cta-yn-btn:active {
+            transform: scale(0.98);
         }
 
         .cta-yn-btn.selected {
             border-color: var(--accent);
-            background: rgba(224,115,64,0.08);
-            color: #C85F2D;
-            box-shadow: 0 0 0 3px rgba(224,115,64,0.12);
+            background: var(--accent);
+            color: #FFFFFF;
+            box-shadow: 0 6px 18px rgba(224, 115, 64, 0.35);
+            font-weight: 700;
         }
 
         .cta-field-group {
@@ -1656,15 +1700,15 @@
         .cta-textarea,
         .cta-input {
             width: 100%;
-            border: 1.5px solid rgba(0,0,0,0.12);
+            border: 1.5px solid rgba(190, 150, 115, 0.5);
             border-radius: 12px;
             padding: 14px 18px;
             font-size: 15px;
             font-family: inherit;
-            color: #2D3748;
-            background: #F8FAFC;
+            color: #161B24;
+            background: #EFE4D6;
             outline: none;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             box-sizing: border-box;
             resize: vertical;
         }
@@ -1674,7 +1718,7 @@
         .cta-textarea:focus,
         .cta-input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(224,115,64,0.12);
+            box-shadow: 0 0 0 3px rgba(224,115,64,0.18);
             background: #FFFFFF;
         }
 
@@ -1822,19 +1866,23 @@
             transform: translateX(-50%) translateY(120px);
             width: calc(100% - 48px);
             max-width: 740px;
-            background: #FFFFFF;
-            border: 1px solid rgba(0,0,0,0.1);
+            background: #F7EFE5;
+            border: 1.5px solid rgba(190, 150, 115, 0.5);
             border-radius: 20px;
             padding: 28px 32px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.14);
+            box-shadow: 0 20px 50px rgba(60, 40, 20, 0.15), 0 0 30px rgba(224,115,64,0.08);
             z-index: 9999;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
             opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
         }
 
         .cookie-banner.visible {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
         }
 
         .cookie-banner-title {
@@ -1918,8 +1966,8 @@
            Подвал сайта (Footer)
            ========================================================================== */
         .site-footer {
-            background: #FFFFFF;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            background: #E3D7C8;
+            border-top: 1.5px solid rgba(190, 150, 115, 0.45);
             padding: 48px 0 36px;
             color: #475467;
             position: relative;
@@ -1961,14 +2009,18 @@
 
         .footer-link {
             font-size: 14px;
-            font-weight: 500;
-            color: #475467;
+            font-weight: 600;
+            color: #2D3748;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 6px;
         }
 
         .footer-link:hover {
             color: var(--accent);
+            background: rgba(224, 115, 64, 0.08);
         }
 
         .footer-tg-link {
@@ -2398,17 +2450,15 @@
 
                     <!-- Блок результата теста -->
                     <div id="quizResultBox" class="quiz-result">
-                        <span class="quiz-result-badge">Результат диагностики</span>
+                        <span class="quiz-result-badge" id="quizResultBadge">Результат теста</span>
                         <h3 class="quiz-result-title" id="quizResultTitle">
-                            Вердикт: У вашего организма включён активный режим биологической защиты
+                            Организм удерживает жировые клетки как защиту от стресса
                         </h3>
                         <div class="quiz-result-body" id="quizResultBody">
-                            <p>Вы ответили «Да» на ключевые маркеры защитной реакции подсознания.</p>
-                            <p>Ваше подсознание расценивает жировые клетки не как лишний груз, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спортзал воспринимаются телом как прямая угроза и неизбежно приводят к новым срывам.</p>
-                            <p><strong>Что делать:</strong> Сначала нужно снять сигнал тревоги в подсознании — и только тогда организм сам спокойно отпустит жировую ткань.</p>
+                            <!-- Заполняется динамически скриптом -->
                         </div>
                         <div class="quiz-result-actions">
-                            <a href="#application" class="btn btn-primary">
+                            <a href="#application" class="btn btn-primary" id="quizCtaBtn">
                                 <span>Заполнить анкету на разбор ситуации</span>
                             </a>
                             <button type="button" class="quiz-reset-btn" id="quizResetBtn">
@@ -2926,6 +2976,9 @@
             const btnNo = document.getElementById('quizBtnNo');
             const resetBtn = document.getElementById('quizResetBtn');
             const resultBody = document.getElementById('quizResultBody');
+            const resultTitle = document.getElementById('quizResultTitle');
+            const resultBadge = document.getElementById('quizResultBadge');
+            const quizCtaBtn = document.getElementById('quizCtaBtn');
 
             function showQuestion(index) {
                 if (!textEl) return;
@@ -2944,41 +2997,72 @@
                 }, 180);
             }
 
-            function handleAnswer(isYes) {
+            function handleAnswer(isYes, clickedBtn) {
+                if (clickedBtn) clickedBtn.classList.add('btn-active');
                 quizAnswers['step' + (currentQuizIndex + 1)] = isYes ? 'yes' : 'no';
                 if (isYes) yesAnswersCount++;
                 currentQuizIndex++;
 
-                if (currentQuizIndex < quizData.length) {
-                    showQuestion(currentQuizIndex);
-                } else {
-                    showResults();
-                }
+                setTimeout(() => {
+                    if (clickedBtn) clickedBtn.classList.remove('btn-active');
+                    if (currentQuizIndex < quizData.length) {
+                        showQuestion(currentQuizIndex);
+                    } else {
+                        showResults();
+                    }
+                }, 160);
             }
 
             function showResults() {
                 if (qBox) qBox.style.display = 'none';
                 if (rBox) rBox.style.display = 'block';
 
-                if (resultBody) {
-                    if (yesAnswersCount >= 3) {
+                if (yesAnswersCount >= 3) {
+                    if (resultBadge) {
+                        resultBadge.textContent = 'Защитная реакция организма';
+                        resultBadge.style.color = '#C85F2D';
+                        resultBadge.style.background = 'rgba(224, 115, 64, 0.12)';
+                        resultBadge.style.borderColor = 'rgba(224, 115, 64, 0.35)';
+                    }
+                    if (resultTitle) {
+                        resultTitle.textContent = 'Организм удерживает жировые клетки как защиту от стресса';
+                    }
+                    if (resultBody) {
                         resultBody.innerHTML = `
-                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> ключевых маркеров защитного режима.</p>
-                            <p>Ваше подсознание расценивает жировые клетки не как лишний вес, а как жизненно необходимый панцирь от стресса и уязвимости. В таком состоянии любые диеты и спорт воспринимаются телом как угроза и вызывают только новые срывы.</p>
-                            <p><strong>Решение:</strong> Снять внутренний аварийный сигнал в подсознании — и тогда организм сам перестанет удерживать жировую ткань.</p>
+                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> признаков защитной реакции тела.</p>
+                            <p>Ваше подсознание воспринимает жировую ткань как биологическую броню от эмоционального напряжения и перегрузок. В таком состоянии любые диеты и насилие над собой организм расценивает как дополнительную угрозу и отвечает новыми срывами.</p>
+                            <p><strong>Рекомендация:</strong> Вам имеет смысл заполнить анкету на индивидуальный разбор ситуации. Когда уходит первопричина тревоги в подсознании — организм сам спокойно отпускает вес.</p>
                         `;
-                    } else {
+                    }
+                    if (quizCtaBtn) {
+                        quizCtaBtn.innerHTML = '<span>Заполнить анкету на разбор ситуации</span>';
+                    }
+                } else {
+                    const noCount = quizData.length - yesAnswersCount;
+                    if (resultBadge) {
+                        resultBadge.textContent = 'Спокойное состояние организма';
+                        resultBadge.style.color = '#2E7D32';
+                        resultBadge.style.background = 'rgba(46, 125, 50, 0.1)';
+                        resultBadge.style.borderColor = 'rgba(46, 125, 50, 0.3)';
+                    }
+                    if (resultTitle) {
+                        resultTitle.textContent = 'У вашего организма нет острой потребности в защите';
+                    }
+                    if (resultBody) {
                         resultBody.innerHTML = `
-                            <p>Вы ответили «Да» на <strong>${yesAnswersCount} из 5</strong> маркеров.</p>
-                            <p>У вас умеренная защитная реакция. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный триггер удержания, который мешает телу сбросить лишнее.</p>
-                            <p><strong>Решение:</strong> Найти точную причину застоя на коротком индивидуальном разборе.</p>
+                            <p>Вы ответили «Нет» на <strong>${noCount} из 5</strong> вопросов теста.</p>
+                            <p>Масштабного стрессового панциря у вашего тела нет. Однако если вес стоит на месте и не поддаётся привычным методам — в подсознании есть локальный точечный триггер, который мешает телу сбросить лишнее.</p>
+                            <p><strong>Рекомендация:</strong> Глубинная перестройка вам не обязательна. Достаточно короткой консультации, чтобы прояснить этот локальный момент и наметить простые шаги.</p>
                         `;
+                    }
+                    if (quizCtaBtn) {
+                        quizCtaBtn.innerHTML = '<span>Записаться на консультацию</span>';
                     }
                 }
             }
 
-            if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true));
-            if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false));
+            if (btnYes) btnYes.addEventListener('click', () => handleAnswer(true, btnYes));
+            if (btnNo) btnNo.addEventListener('click', () => handleAnswer(false, btnNo));
             if (resetBtn) resetBtn.addEventListener('click', () => {
                 currentQuizIndex = 0;
                 yesAnswersCount = 0;
@@ -3006,10 +3090,31 @@
             // 5. Кнопки Да/Нет в финальной анкете
             document.querySelectorAll('.cta-yn-buttons').forEach(group => {
                 group.querySelectorAll('.cta-yn-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
                         group.querySelectorAll('.cta-yn-btn').forEach(b => b.classList.remove('selected'));
                         btn.classList.add('selected');
                     });
+                });
+            });
+
+            // 6. Плавная прокрутка для всех якорных ссылок (шапка, подвал, кнопки)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#' && href.length > 1) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            const headerOffset = 76;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
                 });
             });
 
@@ -3106,7 +3211,11 @@
             const declineBtn = document.getElementById('cookieDecline');
             const checkbox = document.getElementById('cookieCheckbox');
 
-            if (!banner || localStorage.getItem('cookieConsent')) return;
+            if (!banner) return;
+            if (localStorage.getItem('cookieConsent')) {
+                banner.style.display = 'none';
+                return;
+            }
 
             setTimeout(() => { banner.classList.add('visible'); }, 1200);
 
@@ -3130,8 +3239,11 @@
             }
 
             function hideBanner() {
+                banner.classList.remove('visible');
                 banner.style.transform = 'translateX(-50%) translateY(140px)';
                 banner.style.opacity = '0';
+                banner.style.pointerEvents = 'none';
+                banner.style.visibility = 'hidden';
                 setTimeout(() => { banner.style.display = 'none'; }, 600);
             }
         })();
